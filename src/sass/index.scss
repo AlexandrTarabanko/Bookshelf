@@ -1,1 +1,25 @@
+// Utils
 @import './vendors/common';
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/placeholders';
+
+// Base styles
+@import './base/fonts';
+@import './base/base';
+@import './base/resets';
+
+// Components styles
+// @import './components/
+
+// Multipage styles
+// @import './layout/header';
+
+// Index-Page styles
+// @import './layout/
+
+// Shop-List styles
+// @import './layout/
+
+// Modal styles
+// @import './layout/modal/

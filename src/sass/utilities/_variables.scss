@@ -1,12 +1,22 @@
-$primary-colour:#111111; 
-$secondary-colour:#FFFFFF;
+$primary-colour: #111111; 
+$secondary-colour: #FFFFFF;
 
-$main-brand-colour:#4F2EE8;
-$additional-brand-colour:#EAC645;
+$main-brand-colour: #4F2EE8;
+$additional-brand-colour: #EAC645;
 
 $main-background: #B4AFAF;
-$light-theme-background:#FFFFFF;
-$dark-theme-background:#111111;
+$light-theme-background: #FFFFFF;
+$dark-theme-background: #111111;
+
+$modal-light-background: #F6F6F6;
+$modal-dark-background: #202024;
+
+$hover-light-theme: #4F2EE8;
+$hover-dark-theme: #EAC645;
+
+$gradient: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+$shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+
 // breakpoints
 $phoneMax: 374.9px;
 $phoneMin: 375px;
