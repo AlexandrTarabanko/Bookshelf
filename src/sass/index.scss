@@ -1,8 +1,8 @@
 // Utils
 @import './vendors/common';
-@import './utils/variables';
-@import './utils/mixins';
-@import './utils/placeholders';
+@import './utilities/variables';
+@import './utilities/mixins';
+@import './utilities/placeholders';
 
 // Base styles
 @import './base/fonts';
@@ -10,7 +10,7 @@
 @import './base/resets';
 
 // Components styles
-// @import './components/
+@import './components/container'
 
 // Multipage styles
 // @import './layout/header';
