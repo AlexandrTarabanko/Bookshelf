@@ -1,0 +1,26 @@
+$primary-colour:#111111; 
+$secondary-colour:#FFFFFF;
+
+$main-brand-colour:#4F2EE8;
+$additional-brand-colour:#EAC645;
+
+$main-background: #B4AFAF;
+$light-theme-background:#FFFFFF;
+$dark-theme-background:#111111;
+// breakpoints
+$phoneMax: 374.9px;
+$phoneMin: 375px;
+
+$tabletMax: 767.9px;
+$tabletMin: 768px;
+
+$desktopMax: 1439.9px;
+$desktopMin: 1440px;
+
+// padding-container
+$paddingPhone: 20px;
+$paddingTablet: 32px;
+$paddingDt: 24px;
+
+// transition
+$cubic: cubic-bezier(0.4, 0, 0.2, 1);
