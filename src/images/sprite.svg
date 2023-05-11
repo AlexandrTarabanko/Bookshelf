@@ -1,13 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
-<symbol id="icon-Switcher-off" viewBox="0 0 52 32">
+
+<!-- <symbol id="icon-switcher-off" viewBox="0 0 52 32">
 <path d="M0 14.222c0-6.546 5.306-11.852 11.852-11.852h23.704c6.546 0 11.852 5.306 11.852 11.852s-5.306 11.852-11.852 11.852h-23.704c-6.546 0-11.852-5.306-11.852-11.852z"></path>
 <path d="M35.556 24.889c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667-10.667 4.776-10.667 10.667c0 5.891 4.776 10.667 10.667 10.667z"></path>
 </symbol>
 
-<symbol id="icon-Switcher-On" viewBox="0 0 50 32">
+<symbol id="icon-switcher-on" viewBox="0 0 50 32">
 <path d="M2.37 14.222c0-6.546 5.306-11.852 11.852-11.852h23.704c6.546 0 11.852 5.306 11.852 11.852s-5.306 11.852-11.852 11.852h-23.704c-6.546 0-11.852-5.306-11.852-11.852z"></path>
 <path d="M14.222 24.889c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667z"></path>
-</symbol>
+</symbol> -->
 
 <symbol id="icon-user" viewBox="0 0 32 32">
 <path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
