@@ -8,7 +8,7 @@
 @import './base/resets';
 
 // Components styles
-@import './components/container'
+@import './components/container';
 
 // Multipage styles
 // @import './layouts/header';
@@ -20,4 +20,6 @@
 // @import './layout/
 
 // Modal styles
-// @import './layout/modal/
+@import './layouts/modal/form';
+@import './layouts/modal/register-modal';
+@import './layouts/modal/login-modal';
