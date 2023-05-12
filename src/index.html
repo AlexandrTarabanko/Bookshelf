@@ -17,11 +17,13 @@
   <body>
     <include src="./partials/header.html"></include>
     <main>
-      <aside>
-        <include src="./partials/index/side-bar/category-set.html"></include>
-        <include src="./partials/index/side-bar/slider.html"></include>
-      </aside>
-      <include src="./partials/index/main-section/section.html"></include>
+      <div class="container index-container">
+        <aside class="side-bar">
+          <include src="./partials/index/side-bar/category-set.html"></include>
+          <include src="./partials/index/side-bar/slider.html"></include>
+        </aside>
+        <include src="./partials/index/main-section/section.html"></include>
+      </div>
     </main>
     <script src="./index.js" type="module"></script>
   </body>
