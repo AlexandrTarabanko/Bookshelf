@@ -1,10 +1,10 @@
 // Змінити на клік по зображенням
-const openModalBtn = document.getElementById('openModalBtn');
 
+const openModalBtn = document.getElementById('openModalBtn');
 
 const modal = document.querySelector('.modal');
 const closeModalBtn = modal.querySelector('.close-modal-btn');
-const jsBackdropModal = document.querySelector('.js-backdrop-modal')
+const jsBackdropModal = document.querySelector('.js-backdrop-modal');
 
 function openModal() {
   modal.classList.remove('is-hidden');
@@ -30,3 +30,5 @@ jsBackdropModal.addEventListener('click', function (event) {
     closeModal();
   }
 });
+
+export { openModal, closeModal };
