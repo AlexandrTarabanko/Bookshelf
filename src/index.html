@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <include src="./partials/components/favicon.html"></include>
-    <title>Bookshelf</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <include src="./partials/header.html"></include>
-    <main>
-      <div class="container index-container">
-        <aside class="side-bar">
-          <include src="./partials/index/side-bar/category-set.html"></include>
-          <include src="./partials/index/side-bar/slider.html"></include>
-        </aside>
-        <include src="./partials/index/main-section/section.html"></include>
-      </div>
-      <!-- <div class="js-backdrop-modal fire-base-backdrop">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <include src="./partials/components/favicon.html"></include>
+  <title>Bookshelf</title>
+  <link rel="stylesheet" href="./sass/index.scss" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <include src="./partials/header.html"></include>
+  <main>
+    <div class="container index-container">
+      <aside class="side-bar">
+        <include src="./partials/index/side-bar/category-set.html"></include>
+        <include src="./partials/index/side-bar/slider.html"></include>
+      </aside>
+      <include src="./partials/index/main-section/section.html"></include>
+    </div>
+    <!-- <div class="js-backdrop-modal fire-base-backdrop">
         <include src="./partials/modals/register-modal.html"></include>
         <include src="./partials/modals/login-modal.html"></include>
       </div> -->
-      <div class="js-backdrop-modal">
-        <include src="./partials/modals/about-book-modal.html"></include>
-      </div>
-    </main>
+    <div class="js-backdrop-modal">
+      <include src="./partials/modals/about-book-modal.html"></include>
+    </div>
+  </main>
 
-    <script src="./index.js" type="module"></script>
-  </body>
+  <script src="./index.js" type="module"></script>
+</body>
+
 </html>
