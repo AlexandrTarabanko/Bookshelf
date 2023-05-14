@@ -19,6 +19,7 @@
   height: 228px;
   overflow: auto;
   width: 335px;
+
   @media screen and (min-width: $tabletMin) {
     height: 472px;
   }
@@ -93,8 +94,13 @@
   }
 }
 
+.highlight {
+  color: #4f2ee8;
+}
+
 .book {
   margin-bottom: 40px;
+  position: relative;
 
   img {
     max-width: 335px;
@@ -152,19 +158,14 @@
 
   &:last-child {
     margin-bottom: 0px;
-    // @media screen and (min-width: $tabletMin) {
-    //   margin-bottom: 80px;
-    // }
   }
-}
-
-.highlight {
-  color: #4f2ee8;
 }
 
 .category__books {
   @media screen and (min-width: $tabletMin) {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 25px;
     width: 704px;
     flex-wrap: wrap;
@@ -184,9 +185,6 @@
 }
 
 // POP
-.book {
-  position: relative;
-}
 
 .book-popup {
   position: absolute;
