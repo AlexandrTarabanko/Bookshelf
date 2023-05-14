@@ -1,3 +1,5 @@
+import amazonPng from '../images/png-icons/shops/amazon-icon.png';
+
 const bookModalContainer = document.querySelector('.modal');
 const openModalBtn = document.querySelector('#openModalBtn');
 const storageButton = document.querySelector('.storage-button');
@@ -42,6 +44,9 @@ async function fetchBookById(bookId) {
   }
 }
 
+
+
+
 function createMarkup(data) {
   const bookModalImage = data.book_image;
   const bookTitle = data.title;
@@ -51,32 +56,33 @@ function createMarkup(data) {
   const marketBookshop = data.buy_links[4].url;
 
   const html = `
-  <img src="${bookModalImage}" alt="Book Image" class="image__about-book-modal">
-  <h2>${bookTitle}</h2>
-  <p> ${bookAuthor}</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure nam facere exercitationem quibusdam cum in quasi impedit perferendis porro. Vero quos minima doloribus magni corporis beatae ducimus officiis! Rerum?</p>
-  <ul> <li><a href="${marketAmazon}" target="_blank"
+  <img src="${bookModalImage}" alt="Book Image" class="image-about-book-modal">
+  <div class="info-modal">
+  <h2 class="title-about-book-modal">${bookTitle}</h2>
+  <p class="author-about-book-modal"> ${bookAuthor}</p>
+  <p class="text-about-book-modal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure nam facere exercitationem quibusdam cum in quasi impedit perferendis porro. Vero quos minima doloribus magni corporis beatae ducimus officiis! Rerum?</p>
+  <ul class="shop-modal-list"> <li class="shop-modal-item"><a href="${marketAmazon}" target="_blank"
     > <img
-    width="28"
-    height="28"
-    src="src/images/png-icons/shops/amazon-icon.png"
-    alt="close-icon"
+     width="62"
+    height="12"
+        src="${amazonPng}"
+    alt="Amazon"
   /></a></li>
-  <li><a href="${marketAppleBooks}" target="_blank"
+  <li class="shop-modal-item"><a href="${marketAppleBooks}" target="_blank"
     > <img
-    width="28"
-    height="28"
-    src="src/images/png-icons/shops/first-book-shop-icon.png"
-    alt="close-icon"
+    width="33"
+    height="32"
+       src="src/images/png-icons/shops/first-book-shop-icon.png"
+    alt="AppleBooks"
   /></a></li>
-  <li><a href="${marketBookshop}" target="_blank"
+  <li class="shop-modal-item"><a href="${marketBookshop}" target="_blank"
     > <img
-    width="28"
-    height="28"
-    src="src/images/png-icons/shops/second-book-shop-icon.png"
-    alt="close-icon"
+    width="38"
+    height="38"
+    src="./src/images/png-icons/shops/second-book-shop-icon.png"
+    alt="Book-Shop"
   /></a></li>
-</ul>
+</ul></div>
   `;
 
   bookModalContainer.insertAdjacentHTML('afterbegin', html);
