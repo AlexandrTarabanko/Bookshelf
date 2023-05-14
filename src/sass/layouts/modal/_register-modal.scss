@@ -1,8 +1,11 @@
+.fire-base-backdrop {
+    background-color: $main-brand-colour;
+}
 .register-modal{
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
 
     min-width: 335px;
     min-height: 384px;
@@ -12,6 +15,8 @@
     border-radius: 18px;
 
     @include minW-Tablet{
+        padding-right: 80px;
+        padding-left: 80px;
         max-width: 579px;
         max-height: 516px;
     }
@@ -22,22 +27,38 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 28px;
+    &:last-child{
+        gap: 0;
+    }
 }
 
 .modal-input{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    // padding: 20px 173px 20px 40px;
-    gap: 10px;
-    isolation: isolate;
+    padding: 16px 45px 16px 24px;
+    gap: 24px;
+    width: 295px;
+    height: 50px;
 
-    // width: 499px;
-    width: 100%;
-    // height: 64px;
 
     background-color: transparent;
+    color: #F6F6F6;
     border: 2px solid #F6F6F6;
     border-radius: 40px;
+
+    @include minW-Tablet{
+        width: 499px;
+        height: 64px;
+        padding: 20px 80px 20px 40px;
+        gap: 10px;
+    }
+
+    &:focus{
+        outline-color: #F6F6F6;
+        color: #F6F6F6;
+            
+    }
 }
 
 .modal-label{
@@ -45,18 +66,70 @@
 }
 .modal-icon{
     position: absolute;
+    top: 30%;
     left: 85%;
+
+    & img {
+            width: 28px;
+            height: 28px;
+        }
 }
 
-.close-modal-btn{
+.close-modalBtn{
     position: absolute;
-    left: 85%;
-    top: 5%;
+    left: 89%;
+    top: 3%;
     background-color: transparent;
     border: none;
 
     @include minW-Tablet {
         left: 90%;
+        & img{
+            width: 28px;
+            height: 28px;
+        }
     }
 }
 
+.main-modal-btn{
+    margin-top: 24px;
+    padding: 16px 116px;
+    min-width: 294px;
+    min-height: 50px;
+
+    background: #F6F6F6;
+    border-radius: 40px;
+}
+
+.common-modalBtn-field{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+
+    position: absolute;
+    min-width: 124px;
+    min-height: 18px;
+    left: 28%;
+}
+
+.common-modal-btn{
+    min-width: 50px;
+    min-height: 18px;
+
+    font-size: 14px;
+    line-height: 1.29;
+
+    border: transparent;
+    color: rgba(246, 246, 246, 0.5);
+    background-color: transparent;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+} 
+.current-modal-btn{
+    color: #4F2EE8;
+    text-decoration-line: underline;
+}

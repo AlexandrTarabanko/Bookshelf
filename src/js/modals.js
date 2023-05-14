@@ -1,9 +1,8 @@
 // Змінити на клік по зображенням
-
 const openModalBtn = document.getElementById('openModalBtn');
 
 const modal = document.querySelector('.modal');
-const closeModalBtn = modal.querySelector('.close-modal-btn');
+const closeModalBtn = modal.querySelector('#modal-close');
 const jsBackdropModal = document.querySelector('.js-backdrop-modal');
 
 function openModal() {
@@ -30,5 +29,3 @@ jsBackdropModal.addEventListener('click', function (event) {
     closeModal();
   }
 });
-
-export { openModal, closeModal };
