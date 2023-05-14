@@ -1,0 +1,151 @@
+.categorie {
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 485px) {
+    .categorie-list {
+        
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    } 
+}
+
+.book-list {
+    margin-bottom: 32px;
+}
+@media screen and (min-width: 786px) {
+    .book-list {
+        display: flex;
+        gap: 20px;
+        
+    } 
+}
+
+@media screen and (min-width: 786px) and (max-width: 1023.9px) {
+    .book {
+        max-width: 218px;
+        &:nth-child(n + 4){
+            display: none;  
+        }
+    } 
+}
+@media screen and (max-width: 785.9px) {
+    .book:nth-child(n + 2){
+        display: none;  
+    } 
+}
+
+@media screen and (min-width: 1024px) {
+    .book {
+        max-width: 180px;  
+    } 
+}
+
+
+.thumb {
+    height: 485px;
+    width: 335px;
+  }
+  @media screen and (min-width: 786px) {
+    .thumb {
+        height: 316px;
+        width: 218px;
+      }
+}
+
+@media screen and (min-width: 1024px) {
+    .thumb {
+        height: 256px;
+        width: 180px;
+        margin-bottom: 14px;
+      }
+}
+
+
+  .thumb > img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+.book-name {
+    margin-top: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    /* identical to box height, or 112% */
+
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+
+    color: #111111;
+}
+
+.categorie-name {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #B4AFAF;
+    margin-bottom: 18px;
+}
+
+.book-author {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height, or 117% */
+    
+    letter-spacing: -0.04em;
+    
+    color: #B4AFAF;
+}
+
+.btn-look {
+    // width: 68px;
+    // height: 18px;
+
+    font-family: 'DM Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+
+letter-spacing: -0.01em;
+text-transform: uppercase;
+
+color: #111111;
+    display: flex;
+    flex-wrap: nowrap;
+flex-direction: row;
+align-items: flex-start;
+padding: 14px 28px;
+gap: 10px;
+
+min-width: 124px;
+height: 46px;
+margin-left: auto;
+border: 2px solid #4F2EE8;
+border-radius: 40px;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
