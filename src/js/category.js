@@ -1,3 +1,7 @@
+import bigPlaceholder from '../images/placeholders/big-placeholder.png';
+import mediumPlaceholder from '../images/placeholders/medium-placeholder.png';
+import smallPlaceholder from '../images/placeholders/small-placeholder.png';
+
 const listRef = document.querySelector('.category__list');
 const bookListRef = document.querySelector('.category__books');
 const ENDPOINT = 'https://books-backend.p.goit.global/books/category';
@@ -33,8 +37,14 @@ async function fetchByCategory(categoryName) {
 
 async function paintMarkup(arr, categoryName) {
   if (arr.length === 0) {
+    let placeholder = bigPlaceholder;
+    if (window.innerWidth < 768) {
+      placeholder = smallPlaceholder;
+    } else if (window.innerWidth < 1280) {
+      placeholder = mediumPlaceholder;
+    }
     return `<li class="book">
-             <img src='.images/placeholders/big-placeholder' alt="No books found" />
+             <img src="${placeholder}" alt="No books found" />
               <h3>No books found</h3>
             </li>`;
   }
@@ -56,9 +66,7 @@ async function paintMarkup(arr, categoryName) {
           <img src="${book_image}" alt="${title}" />
           <h3>${title}</h3>
           <p>${author}</p>
-        </li>`
-    )
-    .join('');
+        </li>`).join('');
 
   return markup;
 }
