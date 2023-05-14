@@ -1,22 +1,37 @@
+import { openModalId } from './modals';
 import amazonPng from '../images/png-icons/shops/amazon-icon.png';
 
-const bookModalContainer = document.querySelector('.modal');
-const openModalBtn = document.querySelector('#openModalBtn');
-const storageButton = document.querySelector('.storage-button');
-const deleteStorageBtn = document.querySelector('.storage-delete-button');
+const allModal = document.querySelector('#allModal');
+const bookList = document.querySelector('.category__books');
+const storageButton = document.querySelector('.add-storage-button');
+const removeStorageBtn = document.querySelector('.remove-modal-btn');
 const storageDescription = document.querySelector('.storage-description');
-const bookId = '643282b2e85766588626a0fc';
-const secondBookId = '643282b1e85766588626a080';
 const STORAGE_KEY = 'storage-data';
-const storageArr = [];
+let storageArr = [];
 let storageObj = {};
 
-deleteStorageBtn.addEventListener('click', onStorageDelete);
+// deleteStorageBtn.addEventListener('click', onStorageDelete);
 storageButton.addEventListener('click', onStorageAdd);
-openModalBtn.addEventListener('click', onModalOpen);
+removeStorageBtn.addEventListener('click', onStorageDelete);
+bookList.addEventListener('click', onIdClick);
 
-function onModalOpen() {
-  createModal(bookId);
+function onIdClick(e) {
+  const id = e.target.closest('li').id;
+  openModalId();
+  createModal(id);
+}
+
+async function createModal(bookId) {
+  // storageObj = {};
+  try {
+    const data = await fetchBookById(bookId);
+    storageCheck();
+    createMarkup(data);
+    return data;
+  } catch (error) {
+    console.error('Error', error);
+    throw error;
+  }
 }
 
 async function fetchBookById(bookId) {
@@ -36,18 +51,37 @@ async function fetchBookById(bookId) {
       list_name: data.list_name,
       id: data._id,
     };
-    console.log(storageObj);
     return data;
   } catch (error) {
     console.error('Error', error);
     throw error;
   }
 }
+function storageCheck() {
+  const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  const idToFind = storageObj.id;
 
+  if (!storageArr || storageArr.length === 0) {
+    storageButton.style.display = 'block';
+    removeStorageBtn.style.display = 'none';
+    return;
+  } else {
+    const objToFind = storageArr.find(obj => obj.id === idToFind);
+    if (!objToFind) {
+      storageButton.style.display = 'block';
+      removeStorageBtn.style.display = 'none';
+    } else {
+      storageButton.style.display = 'none';
+      removeStorageBtn.style.display = 'block';
+    }
+  }
 
-
+  // if (!objToFind) {
+  // }
+}
 
 function createMarkup(data) {
+  allModal.innerHTML = '';
   const bookModalImage = data.book_image;
   const bookTitle = data.title;
   const bookAuthor = data.author;
@@ -56,6 +90,7 @@ function createMarkup(data) {
   const marketBookshop = data.buy_links[4].url;
 
   const html = `
+  
   <img src="${bookModalImage}" alt="Book Image" class="image-about-book-modal">
   <div class="info-modal">
   <h2 class="title-about-book-modal">${bookTitle}</h2>
@@ -82,40 +117,37 @@ function createMarkup(data) {
     src="./src/images/png-icons/shops/second-book-shop-icon.png"
     alt="Book-Shop"
   /></a></li>
-</ul></div>
+</ul>
+</div>
   `;
-
-  bookModalContainer.insertAdjacentHTML('afterbegin', html);
+  allModal.innerHTML = html;
 }
 
-async function createModal(bookId) {
-  storageObj = {}; // ????????????????????????????????????
-  try {
-    const data = await fetchBookById(bookId);
-    createMarkup(data);
-    return data;
-  } catch (error) {
-    console.error('Error', error);
-    throw error;
-  }
-}
-
-function onStorageAdd(e) {
+function onStorageAdd() {
+  const realStorageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const dataToSave = storageObj;
-  storageArr.push(dataToSave);
+  if (!realStorageArr || realStorageArr.length === 0) {
+    storageArr.push(dataToSave);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
+  } else {
+    realStorageArr.push(dataToSave);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(realStorageArr));
+  }
+
   storageDescription.textContent =
     'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-  e.target.textContent = 'Remove from the shopping list';
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
+  storageCheck();
 }
 
 function onStorageDelete() {
-  const idToDelete = storageObj.id;
-  const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   storageDescription.textContent = '';
 
+  const idToDelete = storageObj.id;
+  const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const indexToDelete = storageArr.findIndex(obj => obj.id === idToDelete);
-  const newStorageArr = storageArr.splice(indexToDelete + 1, 1);
-
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(newStorageArr));
+  storageArr.splice(indexToDelete, 1);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
+  storageCheck();
 }
+
+export { createModal };
