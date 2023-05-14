@@ -2,8 +2,10 @@ import '../../sass/index.scss';
 import bigPlaceholder from '../../images/placeholders/big-placeholder.png';
 import mediumPlaceholder from '../../images/placeholders/medium-placeholder.png';
 import smallPlaceholder from '../../images/placeholders/small-placeholder.png';
+import Notiflix from 'notiflix';
 
 import { fetchBooks } from './fetchBooks.js';
+import Notiflix from 'notiflix';
 
 const categorieList = document.querySelector('.categorie-list');
 
@@ -16,7 +18,8 @@ function markupBooks(array) {
           let placeholder;
           const imgSrc = true ? `${book_image}` : placeholder;
           if (arr.length === 0) {
-            let placeholder = bigPlaceholder;
+            placeholder = bigPlaceholder;
+            Notiflix.Notify.failure('We didnt find any book');
             if (window.innerWidth < 768) {
               placeholder = smallPlaceholder;
             } else if (window.innerWidth < 1280) {
@@ -26,10 +29,12 @@ function markupBooks(array) {
           return `
           <li class="book" id="${_id}">
             <div class="thumb">
-              <img class="book-photo" src="${imgSrc}" alt="${title}" />
+              <img class="book-photo" src="${imgSrc}" alt="${
+            title || 'Not found'
+          }" />
             </div>
-            <h3 class="book-name">${title}</h3>
-            <span class="book-author">${author}</span>
+            <h3 class="book-name">${title || 'Not found'}</h3>
+            <span class="book-author">${author || 'No name'}</span>
           </li>`;
         })
         .join('');

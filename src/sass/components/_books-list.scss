@@ -1,7 +1,7 @@
 .categorie {
     margin-bottom: 40px;
 }
-@media screen and (max-width: 485px) {
+@media screen and (max-width: $phoneMax) {
     .categorie-list {
         
         display: flex;
@@ -14,7 +14,7 @@
 .book-list {
     margin-bottom: 32px;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: $tabletMin) {
     .book-list {
         display: flex;
         gap: 20px;
