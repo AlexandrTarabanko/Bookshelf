@@ -51,8 +51,8 @@ async function paintMarkup(arr, categoryName) {
   let markup = '';
   markup += arr
     .map(
-      ({ title, author, book_image }) =>
-        `<li class="book">
+      ({ title, author, book_image, _id }) =>
+        `<li id="${_id}" class="book">
           <img src="${book_image}" alt="${title}" />
           <h3>${title}</h3>
           <p>${author}</p>

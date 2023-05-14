@@ -1,8 +1,4 @@
 <!-- Кнопка для імітації кліку -->
-
-<button id="openModalBtn" type="button">Приклад</button>
-
-<button type="button" class="storage-delete-button">Delete from Storage</button>
 <div class="modal is-hidden about-book-modal">
   <button id="modal-close" class="close-modal-btn" type="button">
     <img
@@ -12,9 +8,18 @@
       alt="close-icon"
     />
   </button>
-  <div class="storage-button-wrapper"><button type="button" class="storage-button">Add to shopping list</button></div>
-  
-  <p class="storage-description"></p>
+  <div id="allModal"></div>
+  <div class="storage-button-wrapper">
+    <button type="button" class="add-storage-button">
+      Add to shopping list
+    </button>
+
+    <div class="remove-modal-btn">
+      <button type="button" class="storage-delete-button">
+        'Remove from the shopping list';
+      </button>
+
+      <p class="storage-description"></p>
+    </div>
+  </div>
 </div>
-
-
