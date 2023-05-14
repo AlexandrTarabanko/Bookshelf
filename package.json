@@ -20,6 +20,7 @@
   "dependencies": {
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
+    "posthtml-include": "^1.7.4",
     "swiper": "^9.3.1",
     "tui-pagination": "^3.4.1"
   },
@@ -29,7 +30,8 @@
     "@parcel/transformer-webmanifest": "^2.6.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "sharp": "^0.31.1"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
