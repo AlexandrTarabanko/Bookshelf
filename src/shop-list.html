@@ -21,9 +21,18 @@
         <aside class="side-bar">
           <include src="./partials/index/side-bar/slider.html"></include>
         </aside>
+        <section class="shopping-list">
+          <h1 class="shopping-list__title">
+            Shopping <span class="shopping-list__title--colored">List</span>
+          </h1>
+          <div class="cart js-shopping-cart">
+            <ul class="cart__list list js-cart-list"></ul>
+          </div>
+        </section>
       </div>
     </main>
     <div id="pagination" class="tui-pagination"></div>
+    <script type="module" src="./js/shop-list.js"></script>
     <script src="./js/pagination.js" type="module"></script>
   </body>
 </html>
