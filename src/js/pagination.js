@@ -6,3 +6,5 @@ const booksPagination = new Pagination('pagination', {
   itemsPerPage: 10,
   visiblePages: 3,
 });
+
+export default paginationOptions;
