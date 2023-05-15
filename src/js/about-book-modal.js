@@ -1,3 +1,4 @@
+// Модалка по Айдишнику
 import { openModalId } from './modals';
 import amazonPng from '../images/png-icons/shops/amazon-icon.png';
 
