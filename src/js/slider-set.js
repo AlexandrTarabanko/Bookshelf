@@ -1,3 +1,4 @@
+// Slider
 import Swiper, { Navigation } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import fondsInfo from './api/fonds-info.js';
