@@ -8,16 +8,18 @@ const idModal = document.querySelector('.about-book-modal');
 const closeModalBtn = document.querySelector('#modal-close');
 const fireBaseBackdrop = document.querySelector('.fire-base-backdrop');
 const idBackdropModal = document.querySelector('.js-backdrop-modal');
+// const allModal = document.querySelector('allModal')
 
 function openModalId() {
   idModal.classList.remove('is-hidden');
   idBackdropModal.classList.remove('is-hidden');
-  
+    
 }
 
 function closeModalId() {
   idModal.classList.add('is-hidden');
   idBackdropModal.classList.add('is-hidden');
+  // allModal.innerHTML = ''
 }
 
 function openModalRegister() {
