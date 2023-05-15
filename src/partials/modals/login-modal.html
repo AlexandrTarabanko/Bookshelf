@@ -1,0 +1,60 @@
+<button id="openModalBtn" type="button">Приклад</button>
+<div class="modal is-hidden login-modal">
+  <button id="modal-close" class="close-modalBtn" type="button">
+    <img
+      width="20"
+      height="20"
+      src="/src/images/png-icons/modal/close-white-icon.png"
+      alt="close-icon"
+    />
+  </button>
+
+  <form class="register-form" id="formId">
+    <label class="modal-label" for="nameId">
+      <input
+        class="modal-input"
+        type="text"
+        placeholder="Name"
+        id="nameId"
+        required
+      />
+    </label>
+    <label class="modal-label" for="emailId">
+      <img
+        class="modal-icon"
+        width="20"
+        height="20"
+        src="/src/images/png-icons/modal/mail-white-icon.png"
+        alt="mail-icon"
+      />
+      <input
+        class="modal-input"
+        type="email"
+        placeholder="Email"
+        id="emailId"
+        required
+      />
+    </label>
+    <label class="modal-label" for="passwordId">
+      <img
+        class="modal-icon"
+        width="20"
+        height="20"
+        src="/src/images/png-icons/modal/lock-white-icon.png"
+        alt="lock-icon"
+      />
+      <input
+        class="modal-input"
+        type="password"
+        placeholder="Password"
+        id="passwordId"
+        required
+      />
+    </label>
+    <button class="main-modal-btn" type="submit">Sign Up</button>
+  </form>
+  <div class="common-modalBtn-field">
+    <button class="common-modal-btn current-modal-btn">Sign Up</button>
+    <button class="common-modal-btn">Sign In</button>
+  </div>
+</div>
