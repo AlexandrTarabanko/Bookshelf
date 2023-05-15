@@ -1,3 +1,4 @@
+// Модалка по Айдишнику
 import { openModalId } from './modals';
 import amazonPng from '../images/png-icons/shops/amazon-icon.png';
 
@@ -22,7 +23,6 @@ function onIdClick(e) {
 }
 
 async function createModal(bookId) {
-  // storageObj = {};
   try {
     const data = await fetchBookById(bookId);
     storageCheck();
@@ -75,9 +75,6 @@ function storageCheck() {
       removeStorageBtn.style.display = 'block';
     }
   }
-
-  // if (!objToFind) {
-  // }
 }
 
 function createMarkup(data) {
