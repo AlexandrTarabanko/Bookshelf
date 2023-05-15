@@ -22,7 +22,6 @@ function onIdClick(e) {
 }
 
 async function createModal(bookId) {
-  // storageObj = {};
   try {
     const data = await fetchBookById(bookId);
     storageCheck();
@@ -75,9 +74,6 @@ function storageCheck() {
       removeStorageBtn.style.display = 'block';
     }
   }
-
-  // if (!objToFind) {
-  // }
 }
 
 function createMarkup(data) {
