@@ -1,0 +1,72 @@
+import Swiper, { Navigation } from 'swiper';
+import 'swiper/swiper-bundle.css';
+import fondsInfo from './api/fonds-info.js';
+
+Swiper.use([Navigation]);
+
+function generateSlides() {
+  const isMobile = window.innerWidth < 768;
+  const slidesPerView = isMobile ? 4 : 6;
+  let allSlides;
+
+  if (fondsInfo.length > slidesPerView * 2) {
+    console.log(fondsInfo.length);
+    allSlides = fondsInfo;
+  } else {
+    allSlides = [...fondsInfo, ...fondsInfo];
+  }
+  console.log(allSlides);
+
+  let swiper;
+
+  function updateSlider() {
+    if (swiper) {
+      swiper.update();
+    }
+  }
+
+  function handleResize() {
+    updateSlider();
+  }
+
+  const swiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    slidesPerView: slidesPerView,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  };
+
+  swiper = new Swiper('.swiper-container', swiperOptions);
+
+  allSlides.forEach((slide, index) => {
+    const originalIndex = index % fondsInfo.length;
+    const slideHTML = `
+      <div class="swiper-slide">
+        <div class="slide__content">
+          <div class="slide__number">${(originalIndex + 1)
+            .toString()
+            .padStart(2, '0')}</div>
+          <a href="${slide.url}" class="slider__link" target="blank">
+            <img srcset="${slide.img.imageUrl.href}, ${slide.img.retinaImageUrl.href} 2x" 
+            src="${slide.img.imageUrl.href}
+            alt="${slide.title}" 
+            class="slider__png">
+          </a>
+        </div>
+      </div>
+    `;
+    document
+      .querySelector('.swiper-wrapper')
+      .insertAdjacentHTML('beforeend', slideHTML);
+  });
+
+  updateSlider();
+
+  window.addEventListener('resize', handleResize);
+}
+
+document.addEventListener('DOMContentLoaded', generateSlides);
