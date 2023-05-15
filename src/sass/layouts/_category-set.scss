@@ -61,6 +61,7 @@
   }
 }
 
+
 // scroll
 
 ::-webkit-scrollbar {
@@ -108,6 +109,7 @@
     border-radius: 8px;
     min-width: 335px;
     margin-bottom: 14px;
+    
 
     @media screen and (min-width: $tabletMin) {
       min-width: 218px;
@@ -183,6 +185,7 @@
   @media screen and (min-width: $desktopMin) {
     display: flex;
     gap: 40px;
+
   }
 }
 
@@ -206,8 +209,10 @@
   letter-spacing: -0.04em;
   border-radius: 0px 0px 8px 8px;
 
-  transform: translateY(-100%);
-  transition: transform 2s $cubic;
+  
+  transform: translateY(100%);
+  transition: opacity 1s $cubic;
+
   
 
   @media screen and (min-width: $tabletMin) {
