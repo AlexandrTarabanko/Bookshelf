@@ -22,7 +22,7 @@
     } 
 }
 
-@media screen and (min-width: 786px) and (max-width: 1023.9px) {
+@media screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
     .book {
         max-width: 218px;
         &:nth-child(n + 4){
@@ -30,13 +30,13 @@
         }
     } 
 }
-@media screen and (max-width: 785.9px) {
+@media screen and (max-width: $tabletMin) {
     .book:nth-child(n + 2){
         display: none;  
     } 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktopMin) {
     .book {
         max-width: 180px;  
     } 
@@ -47,14 +47,14 @@
     height: 485px;
     width: 335px;
   }
-  @media screen and (min-width: 786px) {
+  @media screen and (min-width: $tabletMin) {
     .thumb {
         height: 316px;
         width: 218px;
       }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktopMin) {
     .thumb {
         height: 256px;
         width: 180px;
