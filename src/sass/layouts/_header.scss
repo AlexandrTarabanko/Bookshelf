@@ -90,8 +90,8 @@
     }
   }
 
-  &__link {
-  }
+  // &__link {
+  // }
 
   &__link-icon {
     margin-left: 8px;
@@ -99,6 +99,7 @@
 }
 
 .menu-container {
+  display: none;
   position: relative;
   z-index: 1;
   top: 0;
