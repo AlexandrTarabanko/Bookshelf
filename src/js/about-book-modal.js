@@ -1,6 +1,11 @@
 // Модалка по Айдишнику
 import { openModalId } from './modals';
-import amazonPng from '../images/png-icons/shops/amazon-icon.png';
+import amazonPng from '../images/png-icons/shops/amazon-icon1x.png';
+import amazonPng2x from '../images/png-icons/shops/amazon-icon2x.png'
+import appleBookPng from '../images/png-icons/shops/applebook-icon1x.png'
+import appleBookPng2x from '../images/png-icons/shops/applebook-icon2x.png'
+import bookShopPng from '../images/png-icons/shops/bookshop-icon1x.png'
+import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png'
 
 const allModal = document.querySelector('#allModal');
 const bookList = document.querySelector('.category__books');
@@ -86,8 +91,7 @@ function createMarkup(data) {
   const marketAppleBooks = data.buy_links[1].url;
   const marketBookshop = data.buy_links[4].url;
 
-  const html = `
-  
+  const html = `  
   <img src="${bookModalImage}" alt="Book Image" class="image-about-book-modal">
   <div class="info-modal">
   <h2 class="title-about-book-modal">${bookTitle}</h2>
@@ -96,22 +100,34 @@ function createMarkup(data) {
   <ul class="shop-modal-list"> <li class="shop-modal-item"><a href="${marketAmazon}" target="_blank"
     > <img
      width="62"
-    height="12"
-        src="${amazonPng}"
+    height="19"
+    srcset="
+    ${amazonPng} 1x,
+    ${amazonPng2x} 2x
+  "
+   src="${amazonPng}"
     alt="Amazon"
   /></a></li>
   <li class="shop-modal-item"><a href="${marketAppleBooks}" target="_blank"
     > <img
     width="33"
     height="32"
-       src="src/images/png-icons/shops/first-book-shop-icon.png"
+    srcset="
+    ${appleBookPng} 1x,
+    ${appleBookPng2x} 2x
+  "
+   src="${appleBookPng}"
     alt="AppleBooks"
   /></a></li>
   <li class="shop-modal-item"><a href="${marketBookshop}" target="_blank"
     > <img
     width="38"
-    height="38"
-    src="./src/images/png-icons/shops/second-book-shop-icon.png"
+    height="36"
+    srcset="
+    ${bookShopPng} 1x,
+    ${bookShopPng2x} 2x
+  "
+   src="${bookShopPng}"
     alt="Book-Shop"
   /></a></li>
 </ul>

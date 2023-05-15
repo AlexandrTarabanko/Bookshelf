@@ -12,6 +12,7 @@ const idBackdropModal = document.querySelector('.js-backdrop-modal');
 function openModalId() {
   idModal.classList.remove('is-hidden');
   idBackdropModal.classList.remove('is-hidden');
+  
 }
 
 function closeModalId() {

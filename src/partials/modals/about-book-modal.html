@@ -1,24 +1,22 @@
 <!-- Кнопка для імітації кліку -->
 <div class="modal is-hidden about-book-modal">
   <button id="modal-close" class="close-modal-btn" type="button">
-    <img
-      width="24"
-      height="24"
-      src="/src/images/png-icons/modal/close-icon.png"
-      alt="close-icon"
-    />
+  
+      <svg class="button--close-icon" width="28" height="28">
+        <use href="./images/sprite.svg#close"></use>
+      </svg>
+
   </button>
   <div id="allModal"></div>
   <div class="storage-button-wrapper">
-    <button type="button" class="add-storage-button">
+    <button type="button" class="add-storage-button modal-id-buttons">
       Add to shopping list
     </button>
 
     <div class="remove-modal-btn">
-      <button type="button" class="storage-delete-button">
-        'Remove from the shopping list';
+      <button type="button" class="storage-delete-button modal-id-buttons">
+        Remove from the shopping list
       </button>
-
       <p class="storage-description"></p>
     </div>
   </div>
