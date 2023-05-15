@@ -2,17 +2,17 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: inline-block;
   width: 335px;
   padding: 40px 24px;
-  border: 2px solid #111111;
+  border: 2px solid $secondary-colour;
   border-radius: 18px;
   background-color: $modal-light-background;
- height: 806px;
+  height: 806px;
 }
 
 .close-modal-btn {
@@ -24,8 +24,13 @@
   right: 12px;
   border: none;
   cursor: pointer;
-  transform: translateX(50%);
+  transition: fill 0.3s ease;
+  background: $modal-light-background;
+  &:hover {
+    fill: $hover-light-theme;
+  }
 }
+
 .image-about-book-modal {
   width: 278px;
   height: 408px;
@@ -41,7 +46,7 @@
   font-style: italic;
   font-size: 12px;
   line-height: 14px;
-  color: #b4afaf;
+  color: $paragraph-colour;
   margin-top: 4px;
 
   width: 287px;
@@ -60,97 +65,97 @@
   width: 180px;
   display: flex;
   justify-content: start;
-  flex-grow: 20px;
+  align-items: center;
+  margin-top: 14px;
+  gap: 20px;
+  filter: grayscale(1);
 }
-.storage-button-wrapper {
-  display: inline-block;
-  top: 50%;
+.shop-modal-item {
+  transition: filter 0.3s ease;
+}
+.shop-modal-item:hover {
+  filter: $icons-shadow;
+}
+.modal-id-buttons {
+  position: absolute;
   left: 50%;
-  width: 100%;
-  text-align: center;
+
+  transform: translateX(-50%);
+  border: 2px solid $hover-light-theme;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding: 14px 23px;
+  bottom: 50px;
+  transition: background, color 0.3s ease;
+  &:hover {
+    background: $hover-light-theme;
+    color: $secondary-colour;
+    cursor: pointer;
+  }
 }
 .add-storage-button {
-  border: 2px solid #4f2ee8;
-  border-radius: 40px;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 18px;
-  text-transform: uppercase;
-  padding: 14px 23px;
-  margin-top: 40px;
+  width: 221px;
 }
-.remove-modal-btn{
+.storage-delete-button {
+  width: 279px;
+}
+.remove-modal-btn {
   display: none;
-  border: 2px solid #4f2ee8;
-  border-radius: 40px;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 18px;
-  text-transform: uppercase;
-  padding: 14px 23px;
-  margin-top: 40px;
 }
 .storage-description {
+  position: absolute;
+  width: 242px;
   font-size: 10px;
   line-height: 12px;
   text-align: center;
   letter-spacing: -0.04em;
   color: rgba(17, 17, 17, 0.5);
-  margin-top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
 }
 
 @media (min-width: 768px) {
   .about-book-modal {
-    display:flex;
+    display: flex;
     position: absolute;
-    width: 579px;
-    height: 501px;
-  
     padding: 40px;
+    height: 500px;
+
+    width: 579px;
   }
   .close-modal-btn {
-  
     width: 28px;
     height: 28px;
     top: 24px;
     right: 24px;
-   
-  }
-  .info-modal{
-    display: inline;
-    max-height: 281px;
-    margin-left: 24px;
   }
   .image-about-book-modal {
     width: 192px;
     height: 281px;
     border-radius: 8px;
   }
-  .storage-button-wrapper {
-position: absolute;
-left: 0;
-top: 340px;
-margin-top: 0;
-
-    text-align: center;
-  }
-  .storage-button {
-width: 499px;
-  }
-
-.storage-description {
+  .info-modal {
     position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    left: 256px;
+    top: 30px;
+  }
+  .modal-id-buttons {
+    bottom: 60px;
+  }
+  .storage-description {
     width: 324px;
-    font-size: 10px;
-    line-height: 12px;
-    text-align: center;
-    letter-spacing: -0.04em;
-    color: rgba(17, 17, 17, 0.5);
-    margin-top: 8px;
+    bottom: 20px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .add-storage-button {
+    width: 499px;
+  }
+  .storage-delete-button {
+    width: 499px;
+  }
 }
-.title-about-book-modal {
-      margin-top: 0;
-  }}
