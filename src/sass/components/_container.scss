@@ -29,9 +29,9 @@
     margin-bottom: 40px;
 
     @include minW-Tablet{
-        display: flex;
+        // display: flex;
         align-items: center;
-        gap: 100px;
+        // gap: 100px;
         margin-bottom: 0;
     }
     @include minW-Dt{

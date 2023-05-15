@@ -1,4 +1,3 @@
-// тестовий блок Ольги
 .aside-container {
   display: flex;
   flex-direction: column;
@@ -15,20 +14,12 @@
     margin-bottom: 0;
   }
 }
-.Olha__block {
-  background-color: purple;
-  height: 352px;
-  width: 335px;
-
-  @media screen and (min-width: $tabletMin) {
-    height: 472px;
-  }
-}
 
 .category {
   height: 228px;
   overflow: auto;
-  width: 335px;
+  width: 356px;
+
   @media screen and (min-width: $tabletMin) {
     height: 472px;
   }
@@ -70,6 +61,7 @@
   }
 }
 
+
 // scroll
 
 ::-webkit-scrollbar {
@@ -103,14 +95,21 @@
   }
 }
 
+.highlight {
+  color: #4f2ee8;
+}
+
 .book {
+  cursor: pointer;
   margin-bottom: 40px;
+  position: relative;
 
   img {
     max-width: 335px;
     border-radius: 8px;
     min-width: 335px;
     margin-bottom: 14px;
+    
 
     @media screen and (min-width: $tabletMin) {
       min-width: 218px;
@@ -132,6 +131,9 @@
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: $primary-colour;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 
     @media screen and (min-width: $tabletMin) {
       max-width: 218px;
@@ -142,10 +144,13 @@
   }
 
   p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     font-size: 12px;
     line-height: 1.16;
     font-style: italic;
-    color: $main-background;
+    color: $paragraph-colour;
     @media screen and (min-width: $tabletMin) {
       max-width: 218px;
     }
@@ -157,15 +162,14 @@
   &:last-child {
     margin-bottom: 0px;
   }
-}
 
-.highlight {
-  color: #4f2ee8;
 }
 
 .category__books {
   @media screen and (min-width: $tabletMin) {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 25px;
     width: 704px;
     flex-wrap: wrap;
@@ -181,7 +185,52 @@
   @media screen and (min-width: $desktopMin) {
     display: flex;
     gap: 40px;
+
   }
 }
 
 // POP
+
+.book-popup {
+  position: absolute;
+  bottom: 55px;
+  height: 70px;
+  width: 335px;
+  opacity: 0;
+  visibility: hidden;
+  background-color: $hover-dark-theme;
+  color: $primary-colour;
+  padding: 26px 52px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  border-radius: 0px 0px 8px 8px;
+
+  
+  transform: translateY(100%);
+  transition: opacity 1s $cubic;
+
+  
+
+  @media screen and (min-width: $tabletMin) {
+    width: 218px;
+  }
+  @media screen and (min-width: $desktopMin) {
+    width: 180px;
+  }
+}
+
+.book:last-child .book-popup {
+  @media screen and (min-width: $tabletMin) {
+    bottom: 95px;
+  }
+}
+
+.book:hover .book-popup {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

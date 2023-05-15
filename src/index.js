@@ -1,6 +1,5 @@
-
+import './js/fetchbooks/main-section';
 import './js/about-book-modal';
 import './js/modals';
-import './js/category.js';
-
-
+import './js/category';
+import './js/slider-set.js';

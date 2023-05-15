@@ -63,10 +63,13 @@ async function paintMarkup(arr, categoryName) {
     .map(
       ({ title, author, book_image, _id }) =>
         `<li id="${_id}" class="book">
-          <img src="${book_image}" alt="${title}" />
-          <h3>${title}</h3>
-          <p>${author}</p>
-        </li>`).join('');
+        <img src="${book_image}" alt="${title}" />
+        <h3>${title}</h3>
+        <p>${author}</p>
+         <div class="book-popup"> quick view </div>
+      </li>`
+    )
+    .join('');
 
   return markup;
 }
