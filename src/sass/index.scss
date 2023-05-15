@@ -1,31 +1,30 @@
 // Utils
-@import './vendors/common';
-@import './utilities/variables';
-@import './utilities/mixins';
-@import './utilities/placeholders';
+@import "./vendors/common";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+@import "./utilities/placeholders";
 
 // Base styles
-@import './base/resets';
-@import './base/pagination.scss';
+@import "./base/resets";
+@import "./base/pagination.scss";
 
 // Components styles
-@import './components/container';
-@import './components/books-list';
-@import './components/slider';
+@import "./components/container";
+@import "./components/books-list";
+@import "./components/slider";
 
 // Multipage styles
-@import './layouts/header';
+@import "./layouts/header";
 
 // Index-Page styles
-@import './layouts/category-set';
+@import "./layouts/category-set";
 
 // Shop-List styles
-// @import './layout/
+
+@import "./layouts/shop-list";
 
 // Modal styles
-@import './layouts/modal/modals';
-@import './layouts/modal/register-modal';
-@import './layouts/modal/login-modal';
-@import './layouts/modal/about-book-modal';
-
-
+@import "./layouts/modal/modals";
+@import "./layouts/modal/register-modal";
+@import "./layouts/modal/login-modal";
+@import "./layouts/modal/about-book-modal";
