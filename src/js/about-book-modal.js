@@ -28,6 +28,7 @@ function onIdClick(e) {
 }
 
 async function createModal(bookId) {
+  allModal.innerHTML = '';
   try {
     const data = await fetchBookById(bookId);
     storageCheck();
@@ -83,7 +84,7 @@ function storageCheck() {
 }
 
 function createMarkup(data) {
-  allModal.innerHTML = '';
+  // allModal.innerHTML = '';
   const bookModalImage = data.book_image;
   const bookTitle = data.title;
   const bookAuthor = data.author;
