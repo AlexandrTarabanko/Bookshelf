@@ -62,7 +62,7 @@ async function paintMarkup(arr, categoryName) {
   markup += arr
     .map(
       ({ title, author, book_image, _id }) =>
-        `<li id="${_id}" class="book">
+        `<li id="${_id}" class="books">
         <img src="${book_image}" alt="${title}" />
         <h3>${title}</h3>
         <p>${author}</p>
