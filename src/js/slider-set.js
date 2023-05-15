@@ -10,12 +10,10 @@ function generateSlides() {
   let allSlides;
 
   if (fondsInfo.length > slidesPerView * 2) {
-    console.log(fondsInfo.length);
     allSlides = fondsInfo;
   } else {
     allSlides = [...fondsInfo, ...fondsInfo];
   }
-  console.log(allSlides);
 
   let swiper;
 
@@ -51,7 +49,9 @@ function generateSlides() {
             .toString()
             .padStart(2, '0')}</div>
           <a href="${slide.url}" class="slider__link" target="blank">
-            <img srcset="${slide.img.imageUrl.href}, ${slide.img.retinaImageUrl.href} 2x" 
+            <img srcset="${slide.img.imageUrl.href}, ${
+      slide.img.retinaImageUrl.href
+    } 2x" 
             src="${slide.img.imageUrl.href}
             alt="${slide.title}" 
             class="slider__png">
