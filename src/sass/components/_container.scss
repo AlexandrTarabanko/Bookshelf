@@ -1,48 +1,47 @@
 .container {
-    max-width: $phoneMax;
-    padding-left: $paddingPhone;
-    padding-right: $paddingPhone;
+  max-width: $phoneMax;
+  padding-left: $paddingPhone;
+  padding-right: $paddingPhone;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  margin: 0 auto;
+
+  @include minW-Tablet {
+    max-width: $tabletMax;
+    padding-left: $paddingTablet;
+    padding-right: $paddingTablet;
     padding-top: 40px;
-    padding-bottom: 80px;
-    
-    margin: 0 auto;
+    padding-bottom: 100px;
+  }
 
-    @include minW-Tablet {
-        max-width: $tabletMax;
-        padding-left: $paddingTablet;
-        padding-right: $paddingTablet;
-        padding-top: 40px;
-        padding-bottom: 100px;
-    }
-
-    @include minW-Dt {
-        max-width: $desktopMax;
-        padding-left: $paddingDt;
-        padding-right: $paddingDt;
-        padding-top: 40px;
-        padding-bottom: 100px;
-    }
-
+  @include minW-Dt {
+    max-width: $desktopMax;
+    padding-left: $paddingDt;
+    padding-right: $paddingDt;
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
 }
 
-.index-container{
-    margin-bottom: 40px;
+.index-container {
+  margin-bottom: 40px;
 
-    @include minW-Tablet{
-        // display: flex;
-        align-items: center;
-        // gap: 100px;
-        margin-bottom: 0;
-    }
-    @include minW-Dt{
-        gap: 40px;
-    }
+  @include minW-Tablet {
+    // display: flex;
+    // align-items: center;
+    // gap: 100px;
+    margin-bottom: 0;
+  }
+  @include minW-Dt {
+    // gap: 40px;
+  }
 }
 
-.shop-list-container{
-    @include minW-Dt {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
+.shop-list-container {
+  @include minW-Dt {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
 }
