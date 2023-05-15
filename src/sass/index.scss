@@ -6,21 +6,25 @@
 
 // Base styles
 @import './base/resets';
+@import './base/pagination.scss';
 
 // Components styles
 @import './components/container';
 @import './components/books-list';
 
 // Multipage styles
-// @import './layouts/header';
 
+@import './layout/header';
 // Index-Page styles
-// @import './layout/
+@import './layouts/category-set';
 
 // Shop-List styles
 // @import './layout/
 
 // Modal styles
-@import './layouts/modal/form';
+@import './layouts/modal/modals';
 @import './layouts/modal/register-modal';
 @import './layouts/modal/login-modal';
+@import './layouts/modal/about-book-modal';
+
+

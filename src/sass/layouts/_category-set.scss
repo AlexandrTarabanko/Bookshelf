@@ -1,0 +1,227 @@
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (min-width: $tabletMin) {
+    flex-direction: row;
+    gap: 32px;
+    margin-bottom: 100px;
+  }
+  @media screen and (min-width: $desktopMin) {
+    flex-direction: column;
+    gap: 86px;
+    margin-bottom: 0;
+  }
+}
+
+.category {
+  height: 228px;
+  overflow: auto;
+  width: 335px;
+
+  @media screen and (min-width: $tabletMin) {
+    height: 472px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    letter-spacing: -0.02em;
+
+    @media screen and (min-width: $tabletMin) {
+      gap: 32px;
+      line-height: 1.33;
+    }
+
+    &--button {
+      border: none;
+      width: auto;
+      background-color: initial;
+      color: initial;
+      text-align: initial;
+      padding: 0;
+      color: rgba(17, 17, 17, 0.6);
+
+      &:hover {
+        color: $hover-light-theme;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.125;
+
+        @media screen and (min-width: $tabletMin) {
+          font-size: 18px;
+          line-height: 1.33;
+        }
+      }
+    }
+  }
+}
+
+// scroll
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+}
+
+.category-title {
+  margin-top: 40px;
+  max-width: 320px;
+  margin-bottom: 40px;
+  font-size: 32px;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+
+  @media screen and (min-width: $tabletMin) {
+    font-size: 48px;
+    line-height: 1.08;
+    max-width: 704px;
+  }
+  @media screen and (min-width: $desktopMin) {
+    max-width: 996px;
+  }
+}
+
+.highlight {
+  color: #4f2ee8;
+}
+
+.book {
+  margin-bottom: 40px;
+  position: relative;
+
+  img {
+    max-width: 335px;
+    border-radius: 8px;
+    min-width: 335px;
+    margin-bottom: 14px;
+
+    @media screen and (min-width: $tabletMin) {
+      min-width: 218px;
+      max-width: 218px;
+      height: 316px;
+    }
+    @media screen and (min-width: $desktopMin) {
+      min-width: 180px;
+      max-width: 180px;
+      height: 256px;
+    }
+  }
+
+  h3 {
+    font-weight: 700;
+    margin-bottom: 4px;
+    max-width: 335px;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: $primary-colour;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @media screen and (min-width: $tabletMin) {
+      max-width: 218px;
+    }
+    @media screen and (min-width: $desktopMin) {
+      max-width: 180px;
+    }
+  }
+
+  p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 1.16;
+    font-style: italic;
+    color: $paragraph-colour;
+    @media screen and (min-width: $tabletMin) {
+      max-width: 218px;
+    }
+    @media screen and (min-width: $desktopMin) {
+      max-width: 180px;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.category__books {
+  @media screen and (min-width: $tabletMin) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+    width: 704px;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: $desktopMin) {
+    width: 996px;
+    gap: 24px;
+  }
+}
+
+.aside-flex {
+  display: block;
+  @media screen and (min-width: $desktopMin) {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+// POP
+
+.book-popup {
+  position: absolute;
+  bottom: 55px;
+  height: 70px;
+  width: 335px;
+  display: none;
+  background-color: $hover-dark-theme;
+  color: $primary-colour;
+  padding: 26px 52px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  border-radius: 0px 0px 8px 8px;
+
+  transform: translateY(-100%);
+  transition: transform 250ms;
+
+  @media screen and (min-width: $tabletMin) {
+    width: 218px;
+  }
+  @media screen and (min-width: $desktopMin) {
+    width: 180px;
+  }
+}
+
+.book:last-child .book-popup {
+  @media screen and (min-width: $tabletMin) {
+    bottom: 95px;
+  }
+}
+
+.book:hover .book-popup {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}

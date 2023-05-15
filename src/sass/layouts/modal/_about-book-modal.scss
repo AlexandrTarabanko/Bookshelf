@@ -1,0 +1,156 @@
+.about-book-modal {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 335px;
+  padding: 40px 24px;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  background-color: $modal-light-background;
+ height: 806px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  top: 12px;
+  right: 12px;
+  border: none;
+  cursor: pointer;
+  transform: translateX(50%);
+}
+.image-about-book-modal {
+  width: 278px;
+  height: 408px;
+  border-radius: 8px;
+}
+.title-about-book-modal {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 14px;
+}
+.author-about-book-modal {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 14px;
+  color: #b4afaf;
+  margin-top: 4px;
+
+  width: 287px;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+.text-about-book-modal {
+  width: 287px;
+
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 18px;
+}
+.shop-modal-list {
+  width: 180px;
+  display: flex;
+  justify-content: start;
+  flex-grow: 20px;
+}
+.storage-button-wrapper {
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+}
+.add-storage-button {
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding: 14px 23px;
+  margin-top: 40px;
+}
+.remove-modal-btn{
+  display: none;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding: 14px 23px;
+  margin-top: 40px;
+}
+.storage-description {
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: rgba(17, 17, 17, 0.5);
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .about-book-modal {
+    display:flex;
+    position: absolute;
+    width: 579px;
+    height: 501px;
+  
+    padding: 40px;
+  }
+  .close-modal-btn {
+  
+    width: 28px;
+    height: 28px;
+    top: 24px;
+    right: 24px;
+   
+  }
+  .info-modal{
+    display: inline;
+    max-height: 281px;
+    margin-left: 24px;
+  }
+  .image-about-book-modal {
+    width: 192px;
+    height: 281px;
+    border-radius: 8px;
+  }
+  .storage-button-wrapper {
+position: absolute;
+left: 0;
+top: 340px;
+margin-top: 0;
+
+    text-align: center;
+  }
+  .storage-button {
+width: 499px;
+  }
+
+.storage-description {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 324px;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: rgba(17, 17, 17, 0.5);
+    margin-top: 8px;
+}
+.title-about-book-modal {
+      margin-top: 0;
+  }}

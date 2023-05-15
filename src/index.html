@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +15,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="light">
     <include src="./partials/header.html"></include>
     <main>
       <div class="container index-container">
@@ -24,11 +25,19 @@
         </aside>
         <include src="./partials/index/main-section/section.html"></include>
       </div>
-      <!-- <div class="js-backdrop-modal">
+      <!-- <div class="js-backdrop-modal fire-base-backdrop">
         <include src="./partials/modals/register-modal.html"></include>
         <include src="./partials/modals/login-modal.html"></include>
       </div> -->
+      <div class="js-backdrop-modal is-hidden">
+        <include src="./partials/modals/about-book-modal.html"></include>
+      </div>
     </main>
+
     <script src="./index.js" type="module"></script>
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/theme-switch.js"></script>
+    <script src="./js/open-close.js"></script>
   </body>
 </html>
+
