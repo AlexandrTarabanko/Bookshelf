@@ -1,0 +1,109 @@
+
+.slider-swiper {
+  position: relative;
+  background: $gradient;
+  box-shadow: $shadow;
+  border-radius: 16px;
+  height: 352px;
+  width: 335px;
+  padding: 24px 40px;
+
+  @include minW-Tablet{
+  height: 472px;
+
+  }
+  @include minW-Dt{
+height: 490px;
+  width: 356px;
+  }
+
+  &__title {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  &__text {
+    color: $secondary-colour;
+    font-size: 28px;
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+  }
+  &__icon {
+    fill: $secondary-colour;
+    width: 20px;
+    height: 32px;
+  }
+
+ 
+}
+
+.swiper-container {
+  margin-top: 40px;
+  overflow: hidden;
+  max-height: 188px;
+  @include minW-Tablet{
+     max-height: 292px;
+  }
+}
+
+.swiper-wripper {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.swiper-slide {
+  height: auto !important;
+  min-height: 32px;
+  flex-shrink: 0;
+}
+
+.slide__content {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.slide__number {
+  color: $secondary-colour;
+  font-size: 14px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  bottom: 20px;
+}
+
+.swiper-button-next {
+  border-radius: 50%;
+  top: inherit !important;
+  bottom: 14px !important;
+  left: 50% !important;
+   background-color: $secondary-colour;
+  width: 38px !important;
+  height: 38px !important;
+  transform: translateX(-50%);
+
+  background-image: url("/src/images/png-icons/fonds/next-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+
+  @include minW-Dt{
+    bottom: 24px !important;
+  }
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: none !important;
+
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+.slider__png {
+  filter: brightness(0) invert(1);
+}
+
+
