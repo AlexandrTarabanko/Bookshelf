@@ -1,104 +1,118 @@
 .header {
-  position: absolute;
-  z-index: 800;
-  top: 0;
-  left: 0;
+  z-index: 100;
+  position: fixed;
   width: 100%;
+  background: $light-theme-background;
+  border: 1.5px solid #111;
+  border-radius: 0 0 8px 8px;
+  // height: 64px;
+}
+.header .container {
+  padding-top: 0;
+  padding-bottom: 0;
   height: 64px;
 
-  background-color: $light-theme-background;
-  border: 1.5px solid #111;
-  border-radius: 0px 0px 8px 8px;
-
   @include minW-Tablet {
-    position: relative;
     height: 72px;
+    padding-top: 14px;
+    padding-bottom: 13px;
   }
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  &__container {
-    padding-left: $paddingPhone;
-    padding-right: $paddingPhone;
-    // height: 64px;
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  gap: 8px;
+}
 
-    @include maxW-Tablet {
-      padding-left: $paddingTablet;
-      padding-right: $paddingTablet;
-      justify-content: space-between;
+.header__logo-text {
+  color: $primary-colour;
 
-      height: 72px;
-    }
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.29;
 
-    @include maxW-Dt {
-      padding-left: $paddingDt;
-      padding-right: $paddingDt;
-      height: 72px;
-    }
-  }
+  letter-spacing: -0.04em;
+}
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 18px;
+  padding-bottom: 18px;
 
-  &__logo {
-    display: flex;
+  @media (min-width: 768px) {
+    padding-top: 13px;
+    padding-bottom: 14px;
     justify-content: center;
-    align-items: center;
-    margin-left: 24px;
-
-    gap: 8px;
   }
-  &__logo-text {
-    color: $primary-colour;
 
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 1.29;
-
-    letter-spacing: -0.04em;
+  @media (min-width: 1440px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 
-.nav {
+.nav__list {
   display: flex;
   align-items: center;
-  padding: 0px;
   gap: 16px;
-  margin-left: 56px;
+  // margin-left: 40px;
 
   @include maxW(767px) {
     display: none;
   }
+  @include minW(767px) {
+    margin-left: 40px;
+  }
+
   @include minW-Dt {
-    margin-left: 298px;
+    margin-left: 76px;
   }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    padding: 7px 16px;
-
-    color: $primary-colour;
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: -0.04em;
-    &:hover,
-    &:focus {
-      font-weight: 700;
-      color: $primary-colour;
-      fill: $primary-colour;
-      background: $hover-dark-theme;
-      border-radius: 36px;
-    }
-  }
-
-  &__link-icon {
-    fill: $primary-colour;
-    margin-left: 8px;
+  @media (min-width: 1440px) {
+    gap: 24px;
   }
 }
 
+.nav__item {
+  display: flex;
+  align-items: center;
+  color: $primary-colour;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  &:hover,
+  &:focus {
+    font-weight: 700;
+    color: $primary-colour;
+    fill: $primary-colour;
+    background: $hover-dark-theme;
+    border-radius: 36px;
+    padding: 8px;
+  }
+}
+.nav__item--current {
+  font-weight: 700;
+  color: $primary-colour;
+  background: $hover-dark-theme;
+  border-radius: 36px;
+  padding: 8px;
+}
+
+.nav__link-icon {
+  margin-left: 4px;
+}
 ///////////// button burger menu /////////////
 
 #btn-hamburger {
@@ -108,7 +122,7 @@
   outline: 0;
   background: transparent;
   border-radius: 2px;
-  padding: 0.6em;
+  // padding: 0.6em;
   cursor: pointer;
   .line-2,
   .line-4 {

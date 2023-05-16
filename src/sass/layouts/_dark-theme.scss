@@ -13,18 +13,12 @@
 }
 .dark .nav__item {
   color: $secondary-colour;
-
-  &:hover,
-  &:focus {
-    color: $primary-colour;
-  }
-}
-.dark .nav__link-icon {
   fill: $secondary-colour;
 
   &:hover,
   &:focus {
     fill: $primary-colour;
+    color: $primary-colour;
   }
 }
 

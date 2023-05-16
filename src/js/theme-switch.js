@@ -3,8 +3,6 @@ const themeSwitcher = document.getElementById('theme-switch');
 themeSwitcher.checked = false;
 function clickHandler() {
   if (this.checked) {
-    // Добавить изменение перемненным параграфов
-    // .
     document.body.classList.remove('light');
     document.body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
