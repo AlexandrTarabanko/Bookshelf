@@ -11,17 +11,17 @@
   padding: 40px 24px;
   border: 2px solid $secondary-colour;
   border-radius: 18px;
-  background-color: $modal-light-background;
+  background-color: $main-background;
   height: 806px;
 }
 
 .close-modal-btn {
   position: absolute;
   padding: 0;
-  width: 24px;
-  height: 24px;
-  top: 12px;
-  right: 12px;
+  width: 28px;
+  height: 28px;
+  top: 7px;
+  right: 7px;
   border: none;
   cursor: pointer;
   transition: fill 0.3s ease;
@@ -56,7 +56,6 @@
 }
 .text-about-book-modal {
   width: 287px;
-
   font-size: 14px;
   line-height: 18px;
   margin-top: 18px;
@@ -140,6 +139,7 @@
   }
   .info-modal {
     position: absolute;
+    width: 270px;
     left: 256px;
     top: 30px;
   }

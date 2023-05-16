@@ -1,26 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
-	<defs>
-		<symbol id="close" viewBox="1.5 1.5 16 16">
-			<path
-				d="M15 4.108 13.892 3 9.5 7.392 5.108 3 4 4.108 8.392 8.5 4 12.892 5.108 14 9.5 9.608 13.892 14 15 12.892 10.608 8.5 15 4.108Z" />
-		</symbol>
-		<symbol id="icon-user" viewBox="0 0 32 32">
-			<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)"
-				d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
-			<path fill="#4f2ee8" style="fill: var(--color2, #4f2ee8)"
-				d="M10.523 22.847c0-1.453 0.577-2.846 1.604-3.873s2.421-1.604 3.873-1.604 2.846 0.577 3.873 1.604c1.027 1.027 1.604 2.421 1.604 3.873h-10.955zM16 16.685c-2.27 0-4.108-1.838-4.108-4.108s1.838-4.108 4.108-4.108c2.27 0 4.108 1.838 4.108 4.108s-1.838 4.108-4.108 4.108z">
-			</path>
-		</symbol>
+<defs>
+<symbol id="close" viewBox="1.5 1.5 16 16"><path d="M15 4.108 13.892 3 9.5 7.392 5.108 3 4 4.108 8.392 8.5 4 12.892 5.108 14 9.5 9.608 13.892 14 15 12.892 10.608 8.5 15 4.108Z"/></symbol>
+<symbol id="icon-user" viewBox="0 0 32 32">
+<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+<path fill="#4f2ee8" style="fill: var(--color2, #4f2ee8)" d="M10.523 22.847c0-1.453 0.577-2.846 1.604-3.873s2.421-1.604 3.873-1.604 2.846 0.577 3.873 1.604c1.027 1.027 1.604 2.421 1.604 3.873h-10.955zM16 16.685c-2.27 0-4.108-1.838-4.108-4.108s1.838-4.108 4.108-4.108c2.27 0 4.108 1.838 4.108 4.108s-1.838 4.108-4.108 4.108z"></path>
+</symbol>
 
-		<symbol id="icon-logo" viewBox="0 0 32 32">
-			<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M0 0l16.343 16.171 15.657 15.829v-32h-32z"></path>
-			<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)"
-				d="M4.457 4.229l11.943 11.829 11.257 11.486h-23.2v-23.314z"></path>
-			<path fill="#4f2ee8" style="fill: var(--color2, #4f2ee8)"
-				d="M27.733 27.618l-11.943-11.829-11.257-11.486h23.2v23.314z"></path>
-			<path fill="#4f2ee8" style="fill: var(--color2, #4f2ee8)" d="M9.257 9.029l13.6 13.6h-13.6v-13.6z"></path>
-			<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M9.257 9.029l13.6 13.6v-13.6h-13.6z"></path>
-		</symbol>
+<symbol id="icon-logo" viewBox="0 0 32 32">
+<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M0 0l16.343 16.171 15.657 15.829v-32h-32z"></path>
+<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M4.457 4.229l11.943 11.829 11.257 11.486h-23.2v-23.314z"></path>
+<path fill="#4f2ee8" style="fill: var(--color2, #4f2ee8)" d="M27.733 27.618l-11.943-11.829-11.257-11.486h23.2v23.314z"></path>
+<path fill="#4f2ee8" style="fill: var(--color2, #4f2ee8)" d="M9.257 9.029l13.6 13.6h-13.6v-13.6z"></path>
+<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M9.257 9.029l13.6 13.6v-13.6h-13.6z"></path>
+</symbol>
 
 		<symbol id="icon-tryzub" viewBox="0 0 20 32">
 			<path
