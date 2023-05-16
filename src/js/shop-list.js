@@ -17,7 +17,7 @@ import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 
 // import './pagination.js';
 // import './modals';
-// import './slider-set.js';
+import './slider-set.js';
 
 const cartEl = document.querySelector('.js-shopping-cart');
 const cartListEl = document.querySelector('.js-cart-list');
