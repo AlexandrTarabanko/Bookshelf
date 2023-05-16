@@ -7,7 +7,19 @@ import Notiflix from 'notiflix';
 import { fetchBooks } from './fetchBooks.js';
 import Notiflix from 'notiflix';
 
-const categorieList = document.querySelector('.categorie-list');
+const allCategoryBtn = document.querySelector('#allCategoryBtn');
+const categorieList = document.querySelector('.categorie-list'); // Perevertnyk
+const allBooksTitle = document.querySelector('.all-books-title'); // Perevertnyk
+const bookListRef = document.querySelector('.category__books'); // Panov
+const sortTitle = document.querySelector('.category-title'); // Panov
+
+allCategoryBtn.addEventListener('click', onAllCategoriesClick);
+
+function onAllCategoriesClick() {
+  startPage();
+}
+
+startPage();
 
 function markupBooks(array) {
   let bestBooks;
@@ -56,6 +68,9 @@ function markupBooks(array) {
 }
 
 async function startPage() {
+  bookListRef.innerHTML = '';
+  sortTitle.style.display = 'none';
+  allBooksTitle.style.display = 'block';
   try {
     const data = await fetchBooks();
     const markup = await markupBooks(data);
@@ -64,5 +79,3 @@ async function startPage() {
     console.log(error.message);
   }
 }
-
-startPage();
