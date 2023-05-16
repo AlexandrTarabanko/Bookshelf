@@ -170,7 +170,7 @@ function createFullCart(container, arr) {
             type="button"
           >
             <svg class="icon-delete" width="22" height="22">
-              <use href="${svgBin}#icon-bin"></use>
+              <use x="1%" href="${svgBin}#icon-bin"></use>
             </svg>
           </button>
         </div>
