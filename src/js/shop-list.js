@@ -16,6 +16,8 @@ import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 // import './vendors/swiper-bundle.min.js';
 
 // import './pagination.js';
+// import './modals';
+// import './slider-set.js';
 
 const cartEl = document.querySelector('.js-shopping-cart');
 const cartListEl = document.querySelector('.js-cart-list');
@@ -96,8 +98,8 @@ function createFullCart(container, arr) {
           />
         </picture>
         <div class="card__content">
-          <h3 class="card__title">${title}</h3>
-          <p class="card__category">${list_name}</p>
+          <h3 class="card__title">${title.trim()}</h3>
+          <p class="card__category">${list_name.trim()}</p>
           <p class="card__description">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Temporibus, architecto voluptate sint debitis ab fugit
@@ -108,7 +110,7 @@ function createFullCart(container, arr) {
             maiores est ullam sed. Cum.
           </p>
           <div class="card__footer">
-            <p class="card__author">${author}</p>
+            <p class="card__author">${author.trim()}</p>
             <ul class="card__shops list">
               <li>
                 <a
