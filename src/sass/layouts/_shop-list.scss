@@ -240,7 +240,7 @@ button {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 
-		color: $main-background;
+		color: $paragraph-colour;
 
 		@media (min-width: 768px) {
 			max-width: 460px;
@@ -308,7 +308,7 @@ button {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 
-		color: $main-background;
+		color: $paragraph-colour;
 
 		@media (min-width: 768px) {
 		}
