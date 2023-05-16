@@ -23,6 +23,7 @@ button {
 	margin-top: 64px;
 	padding-bottom: 40px;
 	@media (min-width: 768px) {
+		margin-top: 0;
 	}
 
 	@media (min-width: 1024px) {
@@ -195,6 +196,7 @@ button {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+
 		@media (min-width: 768px) {
 		}
 
@@ -204,7 +206,7 @@ button {
 
 	&__title {
 		display: block;
-		max-width: calc(100% - 50px);
+		max-width: 144px;
 		width: 100%;
 
 		font-weight: 700;
@@ -228,7 +230,8 @@ button {
 	}
 
 	&__category {
-		max-width: 165px;
+		display: block;
+		max-width: 156px;
 		margin-top: 4px;
 
 		font-weight: 400;
@@ -252,7 +255,7 @@ button {
 
 	&__description {
 		width: 100%;
-		// max-width: 193px;
+		max-width: 193px;
 		max-height: 68px;
 		margin-top: 8px;
 
@@ -267,17 +270,18 @@ button {
 		max-height: 3.9em;
 		overflow: hidden;
 
+		text-overflow: ellipsis;
+
 		color: $primary-colour;
 		@media (min-width: 768px) {
 			// width: 100%;
 
 			margin-top: 14px;
-			// max-width: 508px;
+			max-width: none;
 			max-height: 68px;
 		}
 		@media (min-width: 1024px) {
 			// width: 100%;
-
 			// max-width: 808px;
 		}
 	}
@@ -365,6 +369,35 @@ button {
 
 		&:hover {
 			background-color: $additional-brand-colour;
+		}
+	}
+}
+
+.shop__image {
+	&--amazon {
+		width: 32px;
+		height: 11px;
+
+		@media (min-width: 768px) {
+			width: 48px;
+			height: 15px;
+		}
+	}
+	&--apple {
+		width: 16px;
+		height: 16px;
+		@media (min-width: 768px) {
+			width: 28px;
+			height: 27px;
+		}
+	}
+
+	&--bookshop {
+		width: 16px;
+		height: 16px;
+		@media (min-width: 768px) {
+			width: 32px;
+			height: 30px;
 		}
 	}
 }

@@ -112,13 +112,13 @@ function createFullCart(container, arr) {
           <div class="card__footer">
             <p class="card__author">${author.trim()}</p>
             <ul class="card__shops list">
-              <li>
+              <li class="shop">
                 <a
                   href="${marketAmazon}"
                   target="_blank"
                   rel="noopener nofollow"
                 >
-                  <img
+                  <img class="shop__image--amazon"
                     width="28"
                     height="28"
 										srcset="
@@ -129,13 +129,13 @@ function createFullCart(container, arr) {
                     alt="amazon.com"
                 /></a>
               </li>
-              <li>
+              <li class="shop">
                 <a
                   href="${marketAppleBooks}"
                   target="_blank"
                   rel="noopener nofollow"
                 >
-                  <img
+                  <img class="shop__image--apple"
                     width="28"
                     height="28"
                     srcset="
@@ -145,14 +145,14 @@ function createFullCart(container, arr) {
 										src="${appleBookPng}"
                     alt="books.apple.com"
                 /></a>
-              </li>
+              </li class="shop">
               <li>
                 <a
                   href="${marketBookshop}"
                   target="_blank"
                   rel="noopener nofollow"
                 >
-                  <img
+                  <img class="shop__image--bookshop"
                     width="28"
                     height="28"
                     srcset="
