@@ -10,13 +10,10 @@ import appleBookPng2x from '../images/png-icons/shops/applebook-icon2x.png';
 import bookShopPng from '../images/png-icons/shops/bookshop-icon1x.png';
 import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 
-import paginationOptions from './pagination'; // Настройки пагинации
+import './pagination.js';
 
 const cartEl = document.querySelector('.js-shopping-cart');
 const cartListEl = document.querySelector('.js-cart-list');
-const paginationEl = document.getElementById('pagination');
-
-const pagination = new Pagination(paginationEl, paginationOptions);
 
 const STORAGE_KEY = 'storage-data';
 
