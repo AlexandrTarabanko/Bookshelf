@@ -11,11 +11,11 @@ import bookShopPng from '../images/png-icons/shops/bookshop-icon1x.png';
 import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 
 // import './mobile-menu.js';
-import './theme-switch.js';
-import './open-close.js';
-import './vendors/swiper-bundle.min.js';
+// import './theme-switch.js';
+// import './open-close.js';
+// import './vendors/swiper-bundle.min.js';
 
-import './pagination.js';
+// import './pagination.js';
 
 const cartEl = document.querySelector('.js-shopping-cart');
 const cartListEl = document.querySelector('.js-cart-list');
