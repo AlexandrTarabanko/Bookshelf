@@ -1,4 +1,3 @@
-// Модалка по Айдишнику
 import { openModalId } from './modals';
 import amazonPng from '../images/png-icons/shops/amazon-icon1x.png';
 import amazonPng2x from '../images/png-icons/shops/amazon-icon2x.png';
@@ -16,7 +15,6 @@ const STORAGE_KEY = 'storage-data';
 let storageArr = [];
 let storageObj = {};
 
-// deleteStorageBtn.addEventListener('click', onStorageDelete);
 storageButton.addEventListener('click', onStorageAdd);
 removeStorageBtn.addEventListener('click', onStorageDelete);
 bookList.addEventListener('click', onIdClick);
@@ -84,7 +82,6 @@ function storageCheck() {
 }
 
 function createMarkup(data) {
-  // allModal.innerHTML = '';
   const bookModalImage = data.book_image;
   const bookTitle = data.title;
   const bookAuthor = data.author;
