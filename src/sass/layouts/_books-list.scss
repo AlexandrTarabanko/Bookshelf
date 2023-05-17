@@ -1,0 +1,230 @@
+.categorie {
+    margin-bottom: 40px;
+}
+
+.all-books-title{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include minW-Tablet {
+        margin-top: 100px;
+    }
+    @include minW-Dt {
+        margin-top: 0px;
+    }
+
+}
+
+@media screen and (max-width: $phoneMax) {
+    .categorie-list {
+        
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    } 
+}
+
+.book-list {
+    margin-bottom: 32px;
+
+
+    @media screen and (min-width:768px) {
+            & {
+                display: flex;
+                gap: 40px;
+            }
+        }
+    @media screen and (min-width:1023px) {
+        & {
+                display: flex;
+                gap: 40px;
+                justify-content: space-between;
+            }
+    } 
+    @media screen and (min-width: 1200px) {
+        & {
+            gap: 60px;
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        & {
+                gap: 20px;
+            }
+    }
+}
+
+.book{
+
+    @media screen and (max-width: 767.9px) {
+            &:nth-child(n + 2) {
+                display: none;
+            }
+        }
+
+    @media screen and (min-width: $tabletMin) and (max-width:1023px)  {
+            & {
+                max-width: 218px;
+    
+                &:nth-child(n + 4) {
+                    display: none;
+                }
+            }
+        }
+    
+    @media screen and (min-width:$desktopMin) and (max-width:1199px) {
+        & {
+            max-width: 180px;
+
+            &:nth-child(n + 4) {
+                display: none;
+            }
+        }
+    }
+
+
+    @media screen and (min-width:1200px) and (max-width:1360px) {
+        & {
+            width: 218px;
+
+            &:nth-child(n + 4) {
+                display: none;
+            }
+        }
+    }
+    
+        @media screen and (min-width:1361px) and (max-width:1440px) {
+            & {
+                width: 180px;
+    
+                &:nth-child(n + 5) {
+                    display: none;
+                }
+            }
+        }
+
+    @media screen and (min-width: $desktopMax) {
+        &{
+            max-width: 180px;
+        }
+    }
+}
+
+
+
+
+.thumb {
+    height: 485px;
+    width: 335px;
+  
+    @media screen and (min-width:768px) {
+        &{
+            height: 316px;
+            width: 218px;
+        }
+    } 
+
+    @media screen and (min-width:1023px) and (max-width:1199px) {
+        & {
+            height: 256px;
+            width: 180px;
+        }
+    }
+
+    @media screen and (min-width:1200px) and (max-width:1360px) {
+        & {
+            height: 316px;
+            width: 218px;
+        }
+    }
+
+    @media screen and (min-width:1361px) and (max-width:1439px) {
+        & {
+            height: 256px;
+            width: 180px;
+        }
+    }
+        
+    @media screen and (min-width:1440px) {
+        & {
+            height: 256px;
+            width: 180px;
+            margin-bottom: 14px;
+        }
+    }
+
+
+    & img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+
+.book-name {
+    margin-top: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+
+    font-size: 16px;
+    line-height: 1.125;
+
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+
+    color: #111111;
+}
+
+.categorie-name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #B4AFAF;
+    margin-bottom: 18px;
+}
+
+.book-author {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    
+    letter-spacing: -0.04em;
+    
+    color: #B4AFAF;
+}
+
+.btn-look {
+    // width: 68px;
+    // height: 18px;
+font-size: 14px;
+line-height: 1.28;
+
+letter-spacing: -0.01em;
+text-transform: uppercase;
+
+color: #111111;
+display: flex;
+flex-wrap: nowrap;
+flex-direction: row;
+align-items: flex-start;
+padding: 14px 28px;
+gap: 10px;
+
+min-width: 124px;
+height: 46px;
+margin-left: auto;
+border: 2px solid #4F2EE8;
+border-radius: 40px;
+
+
+}

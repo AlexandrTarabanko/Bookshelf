@@ -10,7 +10,6 @@
 
 // Components styles
 @import "./components/container";
-@import "./components/books-list";
 @import "./components/slider";
 
 // Multipage styles
@@ -18,6 +17,7 @@
 
 // Index-Page styles
 @import "./layouts/category-set";
+@import "./layouts/books-list";
 
 // Shop-List styles
 @import "./layouts/_shop-list.scss";
