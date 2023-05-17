@@ -13,9 +13,7 @@
 @import "./components/slider";
 
 // Multipage styles
-@import './layouts/header';
-@import './layouts/dark-theme';
-@import './layouts/mobile-menu';
+@import "./layouts/header";
 
 // Index-Page styles
 @import "./layouts/category-set";
@@ -25,7 +23,7 @@
 @import "./layouts/_shop-list.scss";
 
 // Modal styles
-@import './layouts/modal/modals';
-@import './layouts/modal/register-modal';
-@import './layouts/modal/login-modal';
-@import './layouts/modal/about-book-modal;
+@import "./layouts/modal/modals";
+@import "./layouts/modal/register-modal";
+@import "./layouts/modal/login-modal";
+@import "./layouts/modal/about-book-modal";
