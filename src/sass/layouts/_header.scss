@@ -14,14 +14,16 @@
 
   @include minW-Tablet {
     height: 72px;
-    padding-top: 14px;
-    padding-bottom: 13px;
+    // padding-top: 14px;
+    // padding-bottom: 13px;
   }
 }
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  // padding-top: 14px;
+  // padding-bottom: 13px;
 }
 
 .header__logo {
@@ -51,14 +53,14 @@
   padding-bottom: 18px;
 
   @media (min-width: 768px) {
-    padding-top: 13px;
-    padding-bottom: 14px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     justify-content: center;
   }
 
   @media (min-width: 1440px) {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 }
 
@@ -86,6 +88,7 @@
 .nav__item {
   display: flex;
   align-items: center;
+  padding: 8px 16px;
   color: $primary-colour;
 
   font-weight: 500;
@@ -99,7 +102,7 @@
     fill: $primary-colour;
     background: $hover-dark-theme;
     border-radius: 36px;
-    padding: 8px;
+    padding: 8px 16px;
   }
 }
 .nav__item--current {
@@ -107,7 +110,7 @@
   color: $primary-colour;
   background: $hover-dark-theme;
   border-radius: 36px;
-  padding: 8px;
+  padding: 8px 16px;
 }
 
 .nav__link-icon {
