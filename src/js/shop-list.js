@@ -19,10 +19,16 @@ import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 // import './modals';
 import './slider-set.js';
 
+import Pagination from 'tui-pagination';
+
 const cartEl = document.querySelector('.js-shopping-cart');
 const cartListEl = document.querySelector('.js-cart-list');
+const paginationContainer = document.getElementById('pagination');
 
 const STORAGE_KEY = 'storage-data';
+
+let itemsPerPage = 4;
+let visiblePages = 2;
 
 cartListEl.addEventListener('click', deleteCard);
 
@@ -30,18 +36,19 @@ createShoppingList();
 
 function createShoppingList() {
   const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
-  if (!storageData || storageData.length === 0) {
+  const totalItems = storageData.length;
+  if (!storageData || totalItems === 0) {
     createEmptyCart(); // вызов функции создания пустой корзины
   } else {
-    createFullCart(cartListEl, storageData); // вызов функции создания списка корзины
+    initPagination(totalItems); // инициализация пагинации
+    createFullCart(storageData, 1); // вызов функции создания списка корзины
   }
 }
 
 // Функция создания пустой корзины
 function createEmptyCart() {
   const markup = `
-		<div class="cart-empty">
+    <div class="cart-empty">
       <p class="cart-empty__text">
         This page is empty, add some books and proceed to order.
       </p>
@@ -51,7 +58,7 @@ function createEmptyCart() {
             ${emptyDtTab1x} 1x,
             ${emptyDtTab2x} 2x
           "
-					media="(min-width: 768px)"
+          media="(min-width: 768px)"
         />
         <img
           srcset="
@@ -63,14 +70,18 @@ function createEmptyCart() {
           class="cart-empty__img"
         />
       </picture>
-		</div>`;
+    </div>`;
 
   cartEl.innerHTML = markup;
 }
 
 // Функция создания полной корзины
-function createFullCart(container, arr) {
-  const markup = arr
+function createFullCart(arr, page) {
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const itemsOnPage = arr.slice(startIndex, endIndex);
+
+  const markup = itemsOnPage
     .map(
       ({
         id,
@@ -83,7 +94,7 @@ function createFullCart(container, arr) {
         list_name,
       }) =>
         `
-			<li class="cart__item card js-card" data-book-id="${id}">
+      <li class="cart__item card js-card" data-book-id="${id}">
         <picture>
           <img
             src="${
@@ -121,10 +132,10 @@ function createFullCart(container, arr) {
                   <img class="shop__image--amazon"
                     width="28"
                     height="28"
-										srcset="
-											${amazonPng} 1x,
-											${amazonPng2x} 2x
-										"
+                    srcset="
+                      ${amazonPng} 1x,
+                      ${amazonPng2x} 2x
+                    "
                     src="${amazonPng}"
                     alt="amazon.com"
                 /></a>
@@ -139,14 +150,14 @@ function createFullCart(container, arr) {
                     width="28"
                     height="28"
                     srcset="
-											${appleBookPng} 1x,
-											${appleBookPng2x} 2x
-										"
-										src="${appleBookPng}"
+                      ${appleBookPng} 1x,
+                      ${appleBookPng2x} 2x
+                    "
+                    src="${appleBookPng}"
                     alt="books.apple.com"
                 /></a>
-              </li class="shop">
-              <li>
+              </li>
+              <li class="shop">
                 <a
                   href="${marketBookshop}"
                   target="_blank"
@@ -156,10 +167,10 @@ function createFullCart(container, arr) {
                     width="28"
                     height="28"
                     srcset="
-											${bookShopPng} 1x,
-											${bookShopPng2x} 2x
-										"
-										src="${bookShopPng}"
+                      ${bookShopPng} 1x,
+                      ${bookShopPng2x} 2x
+                    "
+                    src="${bookShopPng}"
                     alt="bookshop.org"
                 /></a>
               </li>
@@ -178,7 +189,23 @@ function createFullCart(container, arr) {
     )
     .join('');
 
-  container.innerHTML = markup;
+  cartListEl.innerHTML = markup;
+}
+
+// Функция инициализации пагинации
+function initPagination(totalItems) {
+  const pagination = new Pagination(paginationContainer, {
+    totalItems: totalItems,
+    itemsPerPage: itemsPerPage,
+    visiblePages: visiblePages,
+    centerAlign: true,
+  });
+  // Обработка событий пагинации и обновления списка
+  pagination.on('afterMove', eventData => {
+    const currentPage = eventData.page;
+    const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    createFullCart(storageData, currentPage);
+  });
 }
 
 // Функция удаления карточки + вызов функции перерисовки страницы
