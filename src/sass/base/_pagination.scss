@@ -1,6 +1,6 @@
 .tui-pagination {
   display: flex;
-  height: 44px;
+
   gap: 8px;
 
   justify-content: center;
@@ -11,23 +11,34 @@
   justify-content: center;
   align-items: center;
 
-  height: 44px;
-  width: 44px;
+  height: 38px;
+  width: 38px;
 
-  border: 1px solid #111111;
+  border: 1px solid $primary-colour;
   border-radius: 50%;
 
   font-weight: 700;
   font-size: 18px;
+
   color: inherit;
+  @media screen and (min-width: 768px) {
+    height: 44px;
+    width: 44px;
+  }
 }
 
 .tui-page-btn.tui-first,
 .tui-page-btn.tui-prev {
-  color: #fff;
+  color: $light-theme-background;
   cursor: pointer;
-  background: #111111;
-  border-color: #111111;
+  background: $primary-colour;
+  border-color: $primary-colour;
+}
+.tui-page-btn.tui-prev {
+  margin-right: 6px;
+  @media screen and (min-width: 768px) {
+    margin-right: 16px;
+  }
 }
 .tui-page-btn.tui-first:hover,
 .tui-page-btn.tui-prev:hover {
@@ -35,46 +46,53 @@
 }
 .tui-page-btn.tui-first:active,
 .tui-page-btn.tui-prev:active {
-  color: #eac645;
+  color: $additional-brand-colour;
 }
 .tui-page-btn.tui-next,
 .tui-page-btn.tui-last {
-  color: #111111;
+  color: $primary-colour;
   cursor: pointer;
-  background: #eac645;
-  border-color: #111111;
+  background: $additional-brand-colour;
+  border-color: $primary-colour;
 }
+.tui-page-btn.tui-next {
+  margin-left: 6px;
+  @media screen and (min-width: 768px) {
+    margin-left: 16px;
+  }
+}
+
 .tui-page-btn.tui-next:hover,
 .tui-page-btn.tui-last:hover {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .tui-page-btn.tui-next:active,
 .tui-page-btn.tui-last:active {
-  color: #fff;
+  color: $light-theme-background;
 }
 
 .tui-page-btn.tui-is-disabled.tui-first,
 .tui-page-btn.tui-is-disabled.tui-prev {
-  color: #b4afaf;
+  color: $paragraph-colour;
   cursor: pointer;
-  background: #111111;
-  border-color: #111111;
+  background: $primary-colour;
+  border-color: $primary-colour;
   filter: none;
 }
 .tui-page-btn.tui-is-disabled.tui-next,
 .tui-page-btn.tui-is-disabled.tui-last {
-  color: #b4afaf;
+  color: $paragraph-colour;
   cursor: pointer;
-  background: #eac645;
-  border-color: #111111;
+  background: $additional-brand-colour;
+  border-color: $primary-colour;
   filter: none;
 }
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
-  color: #fff;
+  color: $light-theme-background;
   cursor: pointer;
-  background: #111111;
-  border-color: #111111;
+  background: $primary-colour;
+  border-color: $primary-colour;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .tui-pagination .tui-ico-first,
@@ -86,97 +104,148 @@
 .tui-ico-prev::before {
   content: '';
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 
   margin-left: 5px;
 
-  border: 3px solid;
+  border: 2px solid;
   border-left: none;
   border-top: none;
-  border-radius: 3px;
+  border-radius:2px;
 
   transform: rotate(0.37turn);
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
+    border-left: none;
+    border-top: none;
+    border-radius: 3px;
+  }
 }
 .tui-ico-first::after {
   content: '';
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-right: 5px;
   margin-left: 5px;
 
-  border: 3px solid;
+  border: 2px solid;
   border-left: none;
   border-top: none;
-  border-radius: 3px;
+  border-radius: 2px;
 
   transform: rotate(0.37turn);
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
+    border-left: none;
+    border-top: none;
+    border-radius: 3px;
+  }
 }
 .tui-ico-first::before {
   content: '';
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 
-  border: 3px solid;
+  border: 2px solid;
   border-left: none;
   border-top: none;
-  border-radius: 3px;
+  border-radius: 2px;
   transform: translateX(10px) rotate(0.37turn);
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
+    border-left: none;
+    border-top: none;
+    border-radius: 3px;
+  }
 }
 .tui-ico-next::before {
   content: '';
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-right: 5px;
 
-  border: 3px solid;
+  border: 2px solid;
   border-right: none;
   border-bottom: none;
-  border-radius: 3px;
+  border-radius: 2px;
 
   transform: rotate(0.37turn);
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px;
+  }
 }
 .tui-ico-last::before {
   content: '';
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-right: 5px;
   margin-left: 5px;
 
-  border: 3px solid;
+  border: 2px solid;
   border-right: none;
   border-bottom: none;
-  border-radius: 3px;
+  border-radius: 2px;
 
   transform: rotate(0.37turn);
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px;
+  }
 }
 .tui-ico-last::after {
   content: '';
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 
-  border: 3px solid;
+  border: 2px solid;
   border-right: none;
   border-bottom: none;
-  border-radius: 3px;
+  border-radius: 2px;
   transform: translateX(-10px) rotate(0.37turn);
+  @media screen and (min-width: 768px) {
+    height:16px;
+    width: 16px;
+    border: 3px solid;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px;
+  }
+}
+.tui-page-btn.tui-prev-is-ellip.tui-first-child{
+  display: none;
 }
 
 .tui-page-btn.tui-next-is-ellip.tui-last-child:hover,
 .tui-page-btn.tui-prev-is-ellip.tui-first-child:hover {
-  background-color: #fff;
+  background-color: $light-theme-background;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .tui-page-btn.tui-next-is-ellip.tui-last-child:active {
-  background-color: #eac645;
-  color: #fff;
+  background-color: $additional-brand-colour;
+  color: $light-theme-background;
 }
 .tui-page-btn.tui-prev-is-ellip.tui-first-child:active {
-  background-color: #111111;
-  color: #fff;
+  background-color: $primary-colour;
+  color: $light-theme-background;
 }
