@@ -2,6 +2,8 @@ import bigPlaceholder from '../images/placeholders/big-placeholder.png';
 import mediumPlaceholder from '../images/placeholders/medium-placeholder.png';
 import smallPlaceholder from '../images/placeholders/small-placeholder.png';
 
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
+
 const listRef = document.querySelector('.category__list'); // Button Set
 const bookListRef = document.querySelector('.category__books'); // Panov
 const sortTitle = document.querySelector('.category-title'); // Panov
@@ -31,6 +33,12 @@ async function onCategoryCatch(e) {
   if (e.target.nodeName !== 'BUTTON') return;
   const categoryName = e.target.name;
   if (categoryName === 'All categories') return;
+  Loading.hourglass('Loading...', {
+    messageColor: '#eac645',
+    messageFontSize: '30px',
+    svgSize: '100px',
+    svgColor: '#4f2ee8',
+  });
   try {
     categorieList.innerHTML = '';
     allBooksTitle.style.display = 'none';
@@ -41,6 +49,7 @@ async function onCategoryCatch(e) {
   } catch (error) {
     console.error(error.message);
   }
+  Loading.remove(500);
 }
 
 async function fetchByCategory(categoryName) {
@@ -86,9 +95,9 @@ async function paintMarkup(arr, categoryName) {
     .map(
       ({ title, author, book_image, _id }) =>
         `<li id="${_id}" class="books">
-        <img src="${book_image}" alt="${title}" />
-        <h3>${title}</h3>
-        <p>${author}</p>
+          <img loading="lazy" src="${book_image}" alt="${title}" />
+          <h3>${title}</h3>
+          <p>${author}</p>
          <div class="book-popup"> quick view </div>
       </li>`
     )

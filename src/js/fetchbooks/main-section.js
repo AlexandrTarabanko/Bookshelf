@@ -2,7 +2,9 @@ import '../../sass/index.scss';
 import bigPlaceholder from '../../images/placeholders/big-placeholder.png';
 import mediumPlaceholder from '../../images/placeholders/medium-placeholder.png';
 import smallPlaceholder from '../../images/placeholders/small-placeholder.png';
+// import trizub from '../../images/'
 import Notiflix from 'notiflix';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 import { fetchBooks } from './fetchBooks.js';
 import Notiflix from 'notiflix';
@@ -41,12 +43,13 @@ function markupBooks(array) {
           return `
           <li class="book" id="${_id}">
             <div class="thumb">
-              <img class="book-photo" src="${imgSrc}" alt="${
+              <img loading="lazy" class="book-photo" src="${imgSrc}" alt="${
             title || 'Not found'
           }" />
             </div>
             <h3 class="book-name">${title || 'Not found'}</h3>
             <span class="book-author">${author || 'No name'}</span>
+            <div class="all-book-popup"> quick view </div>
           </li>`;
         })
         .join('');
@@ -68,6 +71,13 @@ function markupBooks(array) {
 }
 
 async function startPage() {
+  Loading.hourglass('Loading...', {
+    messageColor: '#eac645',
+    messageFontSize: '30px',
+    svgSize: '100px',
+    svgColor: '#4f2ee8',
+  });
+
   bookListRef.innerHTML = '';
   sortTitle.style.display = 'none';
   allBooksTitle.style.display = 'block';
@@ -78,4 +88,5 @@ async function startPage() {
   } catch (error) {
     console.log(error.message);
   }
+  Loading.remove(500);
 }

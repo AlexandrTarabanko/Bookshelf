@@ -60,6 +60,7 @@ function createEmptyCart() {
             "
           src="${emptyMob1x}"
           alt="Empty cart"
+          loading="lazy"
           class="cart-empty__img"
         />
       </picture>
@@ -86,6 +87,7 @@ function createFullCart(container, arr) {
 			<li class="cart__item card js-card" data-book-id="${id}">
         <picture>
           <img
+            loading="lazy"
             src="${
               book_image
                 ? book_image
@@ -119,6 +121,7 @@ function createFullCart(container, arr) {
                   rel="noopener nofollow"
                 >
                   <img class="shop__image--amazon"
+                    loading="lazy"
                     width="28"
                     height="28"
 										srcset="
@@ -136,6 +139,7 @@ function createFullCart(container, arr) {
                   rel="noopener nofollow"
                 >
                   <img class="shop__image--apple"
+                    loading="lazy"
                     width="28"
                     height="28"
                     srcset="
@@ -153,6 +157,7 @@ function createFullCart(container, arr) {
                   rel="noopener nofollow"
                 >
                   <img class="shop__image--bookshop"
+                    loading="lazy"
                     width="28"
                     height="28"
                     srcset="
