@@ -17,6 +17,12 @@ categorieList.addEventListener('click', onSeeMoreBtn);
 async function onSeeMoreBtn(e) {
   if (e.target.nodeName !== 'BUTTON') return;
   const query = e.target.closest('button').name;
+  Loading.hourglass('Loading...', {
+    messageColor: '#eac645',
+    messageFontSize: '30px',
+    svgSize: '100px',
+    svgColor: '#4f2ee8',
+  });
   try {
     categorieList.innerHTML = '';
     allBooksTitle.style.display = 'none';
@@ -27,6 +33,7 @@ async function onSeeMoreBtn(e) {
   } catch (error) {
     console.error(error.message);
   }
+  Loading.remove(500);
 }
 
 async function onCategoryCatch(e) {
