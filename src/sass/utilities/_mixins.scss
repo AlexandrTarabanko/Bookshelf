@@ -74,3 +74,10 @@
         @content;
     }
 }
+
+// Шаг конём
+@mixin min-maxW-Dt {
+    @media screen and (min-width: $desktopMin) and (max-width: $desktopMax) {
+        @content;
+    }
+}

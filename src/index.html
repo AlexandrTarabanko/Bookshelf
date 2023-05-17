@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,15 +14,18 @@
       rel="stylesheet"
     />
   </head>
+
   <body class="light">
     <include src="./partials/header.html"></include>
     <main>
-      <div class="container index-container">
+      <div class="container index-container flex-category">
         <aside class="side-bar">
           <include src="./partials/index/side-bar/category-set.html"></include>
           <include src="./partials/index/side-bar/slider.html"></include>
         </aside>
-        <include src="./partials/index/main-section/section.html"></include>
+        <include
+          src="./partials/index/main-section/book-section.html"
+        ></include>
       </div>
       <!-- <div class="js-backdrop-modal fire-base-backdrop">
         <include src="./partials/modals/register-modal.html"></include>
@@ -38,7 +40,6 @@
     <script src="./js/mobile-menu.js"></script>
     <script src="./js/theme-switch.js"></script>
     <script src="./js/open-close.js"></script>
-     <script src="./js/vendors/swiper-bundle.min.js"></script>
+    <script src="./js/vendors/swiper-bundle.min.js"></script>
   </body>
 </html>
-
