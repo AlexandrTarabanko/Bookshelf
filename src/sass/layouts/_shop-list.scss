@@ -20,8 +20,8 @@ button {
 .shop-list-container {
 	display: flex;
 	align-items: flex-start;
-	height: 100%;
-	max-height: 956px;
+	// height: 100%;
+	// max-height: 956px;
 	// margin-top: 64px;
 	padding-bottom: 40px;
 	@media (min-width: 768px) {
@@ -94,6 +94,7 @@ button {
 		margin-top: 40px;
 		width: 100%;
 		@media (min-width: 768px) {
+			height: 912px;
 		}
 
 		@media (min-width: 1024px) {
@@ -183,14 +184,14 @@ button {
 
 	&__img {
 		min-width: 100px;
-		min-height: 142px;
+		height: 142px;
 
 		object-fit: cover;
 
 		border-radius: 8px;
 		@media (min-width: 768px) {
 			min-width: 116px;
-			min-height: 165px;
+			height: 165px;
 		}
 	}
 
