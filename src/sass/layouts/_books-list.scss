@@ -54,6 +54,8 @@
 }
 
 .book{
+    position: relative;
+    cursor: pointer;
 
     @media screen and (max-width: 767.9px) {
             &:nth-child(n + 2) {
@@ -92,7 +94,7 @@
         }
     }
     
-        @media screen and (min-width:1361px) and (max-width:1440px) {
+        @media screen and (min-width:1361px) and (max-width:1439px) {
             & {
                 width: 180px;
     
@@ -109,6 +111,33 @@
     }
 }
 
+.all-book-popup {
+    position: absolute;
+    bottom: 55px;
+    height: 70px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background-color: $hover-dark-theme;
+    color: $primary-colour;
+    padding: 26px 52px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    border-radius: 0px 0px 8px 8px;
+
+    transform: translateY(100%);
+    transition: opacity 1s $cubic;
+}
+
+.book:hover .all-book-popup {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(10%);
+}
 
 
 
@@ -204,27 +233,29 @@
 }
 
 .btn-look {
-    // width: 68px;
-    // height: 18px;
-font-size: 14px;
-line-height: 1.28;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.28;
 
-letter-spacing: -0.01em;
-text-transform: uppercase;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
 
-color: #111111;
-display: flex;
-flex-wrap: nowrap;
-flex-direction: row;
-align-items: flex-start;
-padding: 14px 28px;
-gap: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 28px;
+    gap: 10px;
 
-min-width: 124px;
-height: 46px;
-margin-left: auto;
-border: 2px solid #4F2EE8;
-border-radius: 40px;
+    min-width: 124px;
+    height: 46px;
+    margin-left: auto;
+    border: 2px solid #4F2EE8;
+    border-radius: 40px;
 
-
+        &:hover,
+        &:focus{
+            color: $secondary-colour;
+            background-color:#4F2EE8; 
+        }
 }
