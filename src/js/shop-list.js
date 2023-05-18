@@ -236,7 +236,7 @@ function deleteCard(evt) {
 
 // Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану
 function changePagOptionsByScreenWidth() {
-  screenWidth = window.innerWidth;
+  const screenWidth = window.innerWidth;
   if (screenWidth < 768) {
     visiblePages = 1;
     itemsPerPage = 4;
