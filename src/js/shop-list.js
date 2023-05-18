@@ -15,8 +15,6 @@ import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 // import './open-close.js';
 // import './vendors/swiper-bundle.min.js';
 
-// import './pagination.js';
-// import './modals';
 import './slider-set.js';
 
 import Pagination from 'tui-pagination';
@@ -27,12 +25,13 @@ const paginationContainer = document.getElementById('pagination');
 
 const STORAGE_KEY = 'storage-data';
 
-let itemsPerPage = 4;
-let visiblePages = 2;
+let itemsPerPage;
+let visiblePages;
 let resizeTimeout;
 
 cartListEl.addEventListener('click', deleteCard);
 window.addEventListener('resize', changePagOptionsByScreenWidth);
+document.addEventListener('DOMContentLoaded', firstPageLoaded);
 
 createShoppingList();
 
@@ -115,6 +114,12 @@ function createFullCart(arr, page) {
           <p class="card__category">${list_name.trim()}</p>
           <p class="card__description">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Temporibus, architecto voluptate sint debitis ab fugit
+            laudantium nostrum dolore quisquam? Laboriosam nulla eum a,
+            quo, molestiae sed error possimus expedita veniam maiores
+            nam maxime provident quod blanditiis cum voluptate. A
+            provident corrupti dignissimos ullam. Porro architecto
+            maiores est ullam sed. Cum.
             Temporibus, architecto voluptate sint debitis ab fugit
             laudantium nostrum dolore quisquam? Laboriosam nulla eum a,
             quo, molestiae sed error possimus expedita veniam maiores
@@ -235,7 +240,7 @@ function changePagOptionsByScreenWidth() {
     resizeTimeout = setTimeout(function () {
       createShoppingList();
       console.log('count1');
-    }, 300);
+    }, 200);
   } else if (screenWidth >= 768) {
     itemsPerPage = 3;
     visiblePages = 3;
@@ -244,6 +249,21 @@ function changePagOptionsByScreenWidth() {
     resizeTimeout = setTimeout(function () {
       createShoppingList();
       console.log('count2');
-    }, 300);
+    }, 200);
+  }
+}
+
+// Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану при першої загрузці сторінки
+function firstPageLoaded() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 768) {
+    visiblePages = 1;
+    itemsPerPage = 4;
+    createShoppingList();
+  } else if (screenWidth >= 768) {
+    itemsPerPage = 3;
+    visiblePages = 3;
+    createShoppingList();
   }
 }
