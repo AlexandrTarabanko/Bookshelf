@@ -89,19 +89,22 @@
   display: flex;
   align-items: center;
   padding: 8px 16px;
+  border-radius: 36px;
   color: $primary-colour;
 
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.04em;
+
+  transition: background 500ms $cubic ;
+
   &:hover,
   &:focus {
     font-weight: 700;
     color: $primary-colour;
     fill: $primary-colour;
     background: $hover-dark-theme;
-    border-radius: 36px;
     padding: 8px 16px;
   }
 }

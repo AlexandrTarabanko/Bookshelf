@@ -69,6 +69,8 @@
       padding: 0;
       color: rgba(17, 17, 17, 0.6);
 
+      transition: color 500ms $cubic;
+
       &:hover {
         color: $hover-light-theme;
         text-transform: uppercase;
