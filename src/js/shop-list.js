@@ -228,7 +228,7 @@ function deleteCard(evt) {
 function changePagOptionsByScreenWidth() {
   screenWidth = window.innerWidth;
   if (screenWidth < 768) {
-    visiblePages = 2;
+    visiblePages = 1;
     itemsPerPage = 4;
     clearTimeout(resizeTimeout);
 

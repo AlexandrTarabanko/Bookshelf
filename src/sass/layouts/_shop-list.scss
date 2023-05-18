@@ -84,6 +84,12 @@ button {
 
 	&__pagination {
 		margin-top: 20px;
+		@media (min-width: 768px) {
+			margin-top: 40px;
+		}
+
+		@media (min-width: 1024px) {
+		}
 	}
 
 	&__list {
@@ -94,7 +100,7 @@ button {
 		margin-top: 40px;
 		width: 100%;
 		@media (min-width: 768px) {
-			height: 912px;
+			height: 679px;
 		}
 
 		@media (min-width: 1024px) {
