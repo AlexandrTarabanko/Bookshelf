@@ -244,7 +244,6 @@ function changePagOptionsByScreenWidth() {
 
     resizeTimeout = setTimeout(function () {
       createShoppingList();
-      console.log('count1');
     }, 200);
   } else if (screenWidth >= 768) {
     itemsPerPage = 3;
@@ -253,7 +252,6 @@ function changePagOptionsByScreenWidth() {
 
     resizeTimeout = setTimeout(function () {
       createShoppingList();
-      console.log('count2');
     }, 200);
   }
 }
