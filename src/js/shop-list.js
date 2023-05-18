@@ -25,6 +25,8 @@ const paginationContainer = document.getElementById('pagination');
 
 const STORAGE_KEY = 'storage-data';
 
+let page;
+let currentPage = 1;
 let itemsPerPage;
 let visiblePages;
 let resizeTimeout;
@@ -42,7 +44,7 @@ function createShoppingList() {
   } else {
     const totalItems = storageData.length;
     initPagination(totalItems); // ініціалізація пагінації
-    createFullCart(storageData, 1); // виклик функції створення списка кошика
+    createFullCart(storageData, currentPage); // виклик функції створення списка кошика
   }
 }
 
@@ -211,12 +213,14 @@ function initPagination(totalItems) {
     itemsPerPage: itemsPerPage,
     visiblePages: visiblePages,
     centerAlign: true,
+    page: currentPage,
   });
   // Обробка подій пагінації та оновлення списку
   pagination.on('afterMove', eventData => {
-    const currentPage = eventData.page;
+    currentPage = eventData.page;
     const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
     createFullCart(storageData, currentPage);
+    return currentPage;
   });
 }
 
@@ -226,11 +230,25 @@ function deleteCard(evt) {
     const card = evt.target.closest('.js-card');
     const bookId = card.dataset.bookId;
     const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    const indexToDelete = storageData.findIndex(object => object.id === bookId);
-    storageData.splice(indexToDelete, 1);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
-    card.remove();
-    createShoppingList();
+    const newStorageData = storageData.filter(object => object.id !== bookId);
+    // const indexToDelete = storageData.findIndex(object => object.id === bookId);
+    // const newStorageData = storageData.splice(indexToDelete, 1);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newStorageData));
+    if (!newStorageData.length) {
+      card.remove();
+      createEmptyCart();
+    }
+
+    const countPages = Math.ceil(newStorageData.length / itemsPerPage);
+    if (countPages >= currentPage) {
+      card.remove();
+      createShoppingList();
+    } else {
+      page = countPages;
+      currentPage = countPages;
+      card.remove();
+      createShoppingList();
+    }
   }
 }
 
