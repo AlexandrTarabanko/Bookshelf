@@ -12,10 +12,8 @@
     border-radius: 50%;
     border: 10px solid transparent;
 
-    transition: border 500ms $cubic;
     transition: opacity 1500ms $cubic;
-
-    // rgba(79, 46, 232, 0.3);
+    transition: border 500ms $cubic;
 
     &.show {
         opacity: 1;

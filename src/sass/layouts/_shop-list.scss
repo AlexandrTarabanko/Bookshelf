@@ -79,8 +79,8 @@ button {
 		}
 	}
 
-	&__item {
-	}
+	// &__item {
+	// }
 }
 .cart-empty {
 	display: flex;
@@ -305,6 +305,7 @@ button {
 		transition-property: fill;
 		transition-duration: 250ms;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition: background-color 500ms $cubic;
 
 		@media (min-width: $tabletMin) {
 			padding: 8px;
