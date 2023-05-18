@@ -124,6 +124,14 @@
   }
 }
 
+.active {
+  color: $hover-light-theme;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.125;
+}
+
 .highlight {
   color: #4f2ee8;
 }
