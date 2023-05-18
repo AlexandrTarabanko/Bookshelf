@@ -15,33 +15,41 @@ import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 // import './open-close.js';
 // import './vendors/swiper-bundle.min.js';
 
-// import './pagination.js';
-// import './modals';
 import './slider-set.js';
+
+import Pagination from 'tui-pagination';
 
 const cartEl = document.querySelector('.js-shopping-cart');
 const cartListEl = document.querySelector('.js-cart-list');
+const paginationContainer = document.getElementById('pagination');
 
 const STORAGE_KEY = 'storage-data';
 
+let itemsPerPage;
+let visiblePages;
+let resizeTimeout;
+
 cartListEl.addEventListener('click', deleteCard);
+window.addEventListener('resize', changePagOptionsByScreenWidth);
+document.addEventListener('DOMContentLoaded', firstPageLoaded);
 
 createShoppingList();
 
 function createShoppingList() {
   const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
-  if (!storageData || storageData.length === 0) {
-    createEmptyCart(); // вызов функции создания пустой корзины
+  const totalItems = storageData.length;
+  if (!storageData || totalItems === 0) {
+    createEmptyCart(); // виклик функції створення порожнього кошика
   } else {
-    createFullCart(cartListEl, storageData); // вызов функции создания списка корзины
+    initPagination(totalItems); // ініціалізація пагінації
+    createFullCart(storageData, 1); // виклик функції створення списка кошика
   }
 }
 
-// Функция создания пустой корзины
+// Функція створення порожнього кошика
 function createEmptyCart() {
   const markup = `
-		<div class="cart-empty">
+    <div class="cart-empty">
       <p class="cart-empty__text">
         This page is empty, add some books and proceed to order.
       </p>
@@ -51,7 +59,7 @@ function createEmptyCart() {
             ${emptyDtTab1x} 1x,
             ${emptyDtTab2x} 2x
           "
-					media="(min-width: 768px)"
+          media="(min-width: 768px)"
         />
         <img
           srcset="
@@ -64,14 +72,18 @@ function createEmptyCart() {
           class="cart-empty__img"
         />
       </picture>
-		</div>`;
+    </div>`;
 
   cartEl.innerHTML = markup;
 }
 
-// Функция создания полной корзины
-function createFullCart(container, arr) {
-  const markup = arr
+// Функція створення повного кошика
+function createFullCart(arr, page) {
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const itemsOnPage = arr.slice(startIndex, endIndex);
+
+  const markup = itemsOnPage
     .map(
       ({
         id,
@@ -84,7 +96,7 @@ function createFullCart(container, arr) {
         list_name,
       }) =>
         `
-			<li class="cart__item card js-card" data-book-id="${id}">
+      <li class="cart__item card js-card" data-book-id="${id}">
         <picture>
           <img
             loading="lazy"
@@ -110,6 +122,12 @@ function createFullCart(container, arr) {
             nam maxime provident quod blanditiis cum voluptate. A
             provident corrupti dignissimos ullam. Porro architecto
             maiores est ullam sed. Cum.
+            Temporibus, architecto voluptate sint debitis ab fugit
+            laudantium nostrum dolore quisquam? Laboriosam nulla eum a,
+            quo, molestiae sed error possimus expedita veniam maiores
+            nam maxime provident quod blanditiis cum voluptate. A
+            provident corrupti dignissimos ullam. Porro architecto
+            maiores est ullam sed. Cum.
           </p>
           <div class="card__footer">
             <p class="card__author">${author.trim()}</p>
@@ -124,10 +142,10 @@ function createFullCart(container, arr) {
                     loading="lazy"
                     width="28"
                     height="28"
-										srcset="
-											${amazonPng} 1x,
-											${amazonPng2x} 2x
-										"
+                    srcset="
+                      ${amazonPng} 1x,
+                      ${amazonPng2x} 2x
+                    "
                     src="${amazonPng}"
                     alt="amazon.com"
                 /></a>
@@ -143,14 +161,14 @@ function createFullCart(container, arr) {
                     width="28"
                     height="28"
                     srcset="
-											${appleBookPng} 1x,
-											${appleBookPng2x} 2x
-										"
-										src="${appleBookPng}"
+                      ${appleBookPng} 1x,
+                      ${appleBookPng2x} 2x
+                    "
+                    src="${appleBookPng}"
                     alt="books.apple.com"
                 /></a>
-              </li class="shop">
-              <li>
+              </li>
+              <li class="shop">
                 <a
                   href="${marketBookshop}"
                   target="_blank"
@@ -161,10 +179,10 @@ function createFullCart(container, arr) {
                     width="28"
                     height="28"
                     srcset="
-											${bookShopPng} 1x,
-											${bookShopPng2x} 2x
-										"
-										src="${bookShopPng}"
+                      ${bookShopPng} 1x,
+                      ${bookShopPng2x} 2x
+                    "
+                    src="${bookShopPng}"
                     alt="bookshop.org"
                 /></a>
               </li>
@@ -183,10 +201,26 @@ function createFullCart(container, arr) {
     )
     .join('');
 
-  container.innerHTML = markup;
+  cartListEl.innerHTML = markup;
 }
 
-// Функция удаления карточки + вызов функции перерисовки страницы
+// Функція ініціалізації пагінації
+function initPagination(totalItems) {
+  const pagination = new Pagination(paginationContainer, {
+    totalItems: totalItems,
+    itemsPerPage: itemsPerPage,
+    visiblePages: visiblePages,
+    centerAlign: true,
+  });
+  // Обробка подій пагінації та оновлення списку
+  pagination.on('afterMove', eventData => {
+    const currentPage = eventData.page;
+    const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    createFullCart(storageData, currentPage);
+  });
+}
+
+// Функція видалення картки + виклик функції перемальовки сторінки
 function deleteCard(evt) {
   if (evt.target.classList.contains('js-card__delete')) {
     const card = evt.target.closest('.js-card');
@@ -196,6 +230,45 @@ function deleteCard(evt) {
     storageData.splice(indexToDelete, 1);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
     card.remove();
+    createShoppingList();
+  }
+}
+
+// Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану
+function changePagOptionsByScreenWidth() {
+  screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    visiblePages = 1;
+    itemsPerPage = 4;
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      createShoppingList();
+      console.log('count1');
+    }, 200);
+  } else if (screenWidth >= 768) {
+    itemsPerPage = 3;
+    visiblePages = 3;
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      createShoppingList();
+      console.log('count2');
+    }, 200);
+  }
+}
+
+// Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану при першої загрузці сторінки
+function firstPageLoaded() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 768) {
+    visiblePages = 1;
+    itemsPerPage = 4;
+    createShoppingList();
+  } else if (screenWidth >= 768) {
+    itemsPerPage = 3;
+    visiblePages = 3;
     createShoppingList();
   }
 }
