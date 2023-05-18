@@ -189,7 +189,7 @@ function createFullCart(arr, page) {
             </ul>
           </div>
           <button
-            class="card__delete button js-card__delete"
+            aria-label="delete" class="card__delete button js-card__delete"
             type="button"
           >
             <svg class="icon-delete" width="22" height="22">
