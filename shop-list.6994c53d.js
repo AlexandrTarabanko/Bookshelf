@@ -1,2 +1,0 @@
-(()=>{const e=document.querySelector(".js-menu-container"),t=document.querySelector(".js-open-menu");t.addEventListener("click",(()=>{const n="true"===t.getAttribute("aria-expanded")||!1;t.setAttribute("aria-expanded",!n),e.classList.toggle("is-open")})),window.matchMedia("(min-width: 768px)").addEventListener("change",(n=>{n.matches&&(e.classList.remove("is-open"),t.setAttribute("aria-expanded",!1))}))})();
-//# sourceMappingURL=shop-list.6994c53d.js.map
