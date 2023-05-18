@@ -37,10 +37,10 @@ createShoppingList();
 
 function createShoppingList() {
   const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  const totalItems = storageData.length;
-  if (!storageData || totalItems === 0) {
+  if (!storageData || storageData.length === 0) {
     createEmptyCart(); // виклик функції створення порожнього кошика
   } else {
+    const totalItems = storageData.length;
     initPagination(totalItems); // ініціалізація пагінації
     createFullCart(storageData, 1); // виклик функції створення списка кошика
   }
