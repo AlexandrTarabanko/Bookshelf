@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A consistent sort-library that everybody would find easy and simple to use on their own purpose."
+    />
     <include src="./partials/components/favicon.html"></include>
     <title>Bookshelf</title>
     <link rel="stylesheet" href="./sass/index.scss" />
@@ -23,24 +27,21 @@
           <include src="./partials/index/side-bar/category-set.html"></include>
           <include src="./partials/index/side-bar/slider.html"></include>
         </aside>
-        <!-- <include src="./partials/index/main-section/section.html"></include> -->
         <include
           src="./partials/index/main-section/book-section.html"
         ></include>
       </div>
-      <!-- <div class="js-backdrop-modal fire-base-backdrop">
-        <include src="./partials/modals/register-modal.html"></include>
-        <include src="./partials/modals/login-modal.html"></include>
-      </div> -->
-      <div class="js-backdrop-modal is-hidden">
-        <include src="./partials/modals/about-book-modal.html"></include>
-      </div>
+      <button id="anchorBtn" class="anchor-btn">
+        <svg class="anchor-icon" width="24" height="24">
+          <use href="./images/sprite.svg#icon-anchor"></use>
+        </svg>
+      </button>
     </main>
 
-    <script src="./index.js" type="module"></script>
-    <script src="./js/mobile-menu.js"></script>
-    <script src="./js/theme-switch.js"></script>
-    <script src="./js/open-close.js"></script>
-    <script src="./js/vendors/swiper-bundle.min.js"></script>
+    <div class="js-backdrop-modal is-hidden">
+      <include src="./partials/modals/about-book-modal.html"></include>
+    </div>
+
+    <script defer src="./index.js" type="module"></script>
   </body>
 </html>

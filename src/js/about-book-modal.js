@@ -1,4 +1,3 @@
-// Модалка по Айдишнику
 import { openModalId } from './modals';
 import amazonPng from '../images/png-icons/shops/amazon-icon1x.png';
 import amazonPng2x from '../images/png-icons/shops/amazon-icon2x.png';
@@ -8,7 +7,8 @@ import bookShopPng from '../images/png-icons/shops/bookshop-icon1x.png';
 import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 
 const allModal = document.querySelector('#allModal');
-const bookList = document.querySelector('.category__books');
+const categorieList = document.querySelector('.categorie-list'); // Perevertnyk
+const bookList = document.querySelector('.category__books'); // Panov
 const storageButton = document.querySelector('.add-storage-button');
 const removeStorageBtn = document.querySelector('.remove-modal-btn');
 const storageDescription = document.querySelector('.storage-description');
@@ -16,12 +16,13 @@ const STORAGE_KEY = 'storage-data';
 let storageArr = [];
 let storageObj = {};
 
-// deleteStorageBtn.addEventListener('click', onStorageDelete);
 storageButton.addEventListener('click', onStorageAdd);
 removeStorageBtn.addEventListener('click', onStorageDelete);
-bookList.addEventListener('click', onIdClick);
+bookList.addEventListener('click', onIdClick); // Panov
+categorieList.addEventListener('click', onIdClick); // Perevertnyk
 
 function onIdClick(e) {
+  if (e.target.nodeName === 'BUTTON') return;
   const id = e.target.closest('li').id;
   openModalId();
   createModal(id);
@@ -84,7 +85,6 @@ function storageCheck() {
 }
 
 function createMarkup(data) {
-  // allModal.innerHTML = '';
   const bookModalImage = data.book_image;
   const bookTitle = data.title;
   const bookAuthor = data.author;

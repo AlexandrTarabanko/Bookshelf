@@ -10,20 +10,23 @@
 
 // Components styles
 @import "./components/container";
-@import "./components/books-list";
 @import "./components/slider";
 
 // Multipage styles
-@import "./layouts/header";
+@import './layouts/header';
+@import './layouts/dark-theme';
+@import './layouts/mobile-menu';
+@import './layouts/anchor-btn';
 
 // Index-Page styles
 @import "./layouts/category-set";
+@import "./layouts/books-list";
 
 // Shop-List styles
 @import "./layouts/_shop-list.scss";
 
 // Modal styles
-@import "./layouts/modal/modals";
-@import "./layouts/modal/register-modal";
-@import "./layouts/modal/login-modal";
-@import "./layouts/modal/about-book-modal";
+@import './layouts/modal/modals';
+@import './layouts/modal/register-modal';
+@import './layouts/modal/login-modal';
+@import './layouts/modal/about-book-modal';

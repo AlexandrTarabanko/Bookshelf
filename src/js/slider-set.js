@@ -53,7 +53,7 @@ function generateSlides() {
             <img srcset="${slide.img.imageUrl.href}, ${
       slide.img.retinaImageUrl.href
     } 2x" 
-            src="${slide.img.imageUrl.href}
+            src="${slide.img.imageUrl.href}"
             alt="${slide.title}" 
             class="slider__png">
           </a>
