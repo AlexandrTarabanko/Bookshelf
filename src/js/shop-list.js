@@ -29,8 +29,10 @@ const STORAGE_KEY = 'storage-data';
 
 let itemsPerPage = 4;
 let visiblePages = 2;
+let resizeTimeout;
 
 cartListEl.addEventListener('click', deleteCard);
+window.addEventListener('resize', changePagOptionsByScreenWidth);
 
 createShoppingList();
 
@@ -38,14 +40,14 @@ function createShoppingList() {
   const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   const totalItems = storageData.length;
   if (!storageData || totalItems === 0) {
-    createEmptyCart(); // вызов функции создания пустой корзины
+    createEmptyCart(); // виклик функції створення порожнього кошика
   } else {
-    initPagination(totalItems); // инициализация пагинации
-    createFullCart(storageData, 1); // вызов функции создания списка корзины
+    initPagination(totalItems); // ініціалізація пагінації
+    createFullCart(storageData, 1); // виклик функції створення списка кошика
   }
 }
 
-// Функция создания пустой корзины
+// Функція створення порожнього кошика
 function createEmptyCart() {
   const markup = `
     <div class="cart-empty">
@@ -75,7 +77,7 @@ function createEmptyCart() {
   cartEl.innerHTML = markup;
 }
 
-// Функция создания полной корзины
+// Функція створення повного кошика
 function createFullCart(arr, page) {
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -192,7 +194,7 @@ function createFullCart(arr, page) {
   cartListEl.innerHTML = markup;
 }
 
-// Функция инициализации пагинации
+// Функція ініціалізації пагінації
 function initPagination(totalItems) {
   const pagination = new Pagination(paginationContainer, {
     totalItems: totalItems,
@@ -200,7 +202,7 @@ function initPagination(totalItems) {
     visiblePages: visiblePages,
     centerAlign: true,
   });
-  // Обработка событий пагинации и обновления списка
+  // Обробка подій пагінації та оновлення списку
   pagination.on('afterMove', eventData => {
     const currentPage = eventData.page;
     const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -208,7 +210,7 @@ function initPagination(totalItems) {
   });
 }
 
-// Функция удаления карточки + вызов функции перерисовки страницы
+// Функція видалення картки + виклик функції перемальовки сторінки
 function deleteCard(evt) {
   if (evt.target.classList.contains('js-card__delete')) {
     const card = evt.target.closest('.js-card');
@@ -219,5 +221,29 @@ function deleteCard(evt) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
     card.remove();
     createShoppingList();
+  }
+}
+
+// Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану
+function changePagOptionsByScreenWidth() {
+  screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    visiblePages = 2;
+    itemsPerPage = 4;
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      createShoppingList();
+      console.log('count1');
+    }, 300);
+  } else if (screenWidth >= 768) {
+    itemsPerPage = 3;
+    visiblePages = 3;
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      createShoppingList();
+      console.log('count2');
+    }, 300);
   }
 }
