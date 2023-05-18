@@ -22,6 +22,11 @@
   }
 }
 
+.dark .nav__item--current{
+  fill: $primary-colour;
+  color: $primary-colour;
+}
+
 .dark #btn-hamburger .line-1 {
   background-color: $secondary-colour;
 }
@@ -105,4 +110,13 @@
 }
 .dark ::-webkit-scrollbar-thumb {
   background: #111;
+}
+.dark .tui-page-btn{
+  color: $secondary-colour;
+}
+.dark .tui-next{
+  color: $primary-colour;
+}
+.dark .tui-last{
+  color: $primary-colour;
 }
