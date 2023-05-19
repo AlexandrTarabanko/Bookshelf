@@ -25,7 +25,8 @@ function onIdClick(e) {
   if (
     e.target.nodeName === 'BUTTON' ||
     e.target.nodeName === 'UL' ||
-    e.target.nodeName === 'DIV'
+    e.target.nodeName === 'DIV' ||
+    e.target.nodeName === 'H3'
   )
     return;
   const id = e.target.closest('li').id;
