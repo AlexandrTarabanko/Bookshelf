@@ -22,7 +22,12 @@ bookList.addEventListener('click', onIdClick); // Panov
 categorieList.addEventListener('click', onIdClick); // Perevertnyk
 
 function onIdClick(e) {
-  if (e.target.nodeName === 'BUTTON' || e.target.nodeName === 'UL') return;
+  if (
+    e.target.nodeName === 'BUTTON' ||
+    e.target.nodeName === 'UL' ||
+    e.target.nodeName === 'DIV'
+  )
+    return;
   const id = e.target.closest('li').id;
   openModalId();
   createModal(id);
